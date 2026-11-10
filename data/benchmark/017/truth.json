@@ -1,0 +1,58 @@
+{
+  "findings": [
+    [
+      "CURRENCY",
+      "difference",
+      ""
+    ],
+    [
+      "UNIT_PRICE",
+      "review",
+      "T-116"
+    ]
+  ],
+  "documents": {
+    "PO": [
+      {
+        "order_id": "P-1016",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "T-116",
+        "product": "Demo lamp",
+        "quantity": "116",
+        "unit": "PCS",
+        "unit_price": "13",
+        "currency": "USD"
+      }
+    ],
+    "CI": [
+      {
+        "order_id": "P-1016",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "T-116",
+        "product": "Demo lamp",
+        "quantity": "116",
+        "unit": "PCS",
+        "invoice_id": "INV-P-1016",
+        "unit_price": "13",
+        "currency": "EUR",
+        "line_amount": "1508"
+      }
+    ],
+    "PL": [
+      {
+        "order_id": "P-1016",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "T-116",
+        "product": "Demo lamp",
+        "quantity": "116",
+        "unit": "PCS",
+        "packages": "10",
+        "net_kg": "120",
+        "gross_kg": "130"
+      }
+    ]
+  }
+}

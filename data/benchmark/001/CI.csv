@@ -1,0 +1,2 @@
+﻿order_id,invoice_id,buyer,seller,sku,product,quantity,unit,unit_price,currency,line_amount,packages,net_kg,gross_kg
+P-1000,INV-P-1000,Harbor Demo LLC,Pioneer Demo Co.,T-100,Demo lamp,100,PCS,12,USD,1200,,,

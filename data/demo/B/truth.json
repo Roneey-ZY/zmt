@@ -1,0 +1,68 @@
+{
+  "findings": [
+    [
+      "PO_CI_QTY",
+      "difference",
+      "A-100"
+    ],
+    [
+      "UNIT_PRICE",
+      "difference",
+      "A-100"
+    ],
+    [
+      "CI_PL_QTY",
+      "difference",
+      "A-100"
+    ],
+    [
+      "WEIGHT",
+      "contradiction",
+      "A-100"
+    ]
+  ],
+  "documents": {
+    "PO": [
+      {
+        "order_id": "PO-002",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "A-100",
+        "product": "Demo lamp",
+        "quantity": "100",
+        "unit": "PCS",
+        "unit_price": "20",
+        "currency": "USD"
+      }
+    ],
+    "CI": [
+      {
+        "order_id": "PO-002",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "A-100",
+        "product": "Demo lamp",
+        "quantity": "90",
+        "unit": "PCS",
+        "invoice_id": "INV-PO-002",
+        "unit_price": "21",
+        "currency": "USD",
+        "line_amount": "1890"
+      }
+    ],
+    "PL": [
+      {
+        "order_id": "PO-002",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "A-100",
+        "product": "Demo lamp",
+        "quantity": "100",
+        "unit": "PCS",
+        "packages": "10",
+        "net_kg": "120",
+        "gross_kg": "110"
+      }
+    ]
+  }
+}

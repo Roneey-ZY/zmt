@@ -1,0 +1,2 @@
+﻿order_id,invoice_id,buyer,seller,sku,product,quantity,unit,unit_price,currency,line_amount,packages,net_kg,gross_kg
+P-1014,INV-P-1014,Harbor Demo LLC,Pioneer Demo Co.,T-114,Demo lamp,114,PCS,16,USD,1824,,,

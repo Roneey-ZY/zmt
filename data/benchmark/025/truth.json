@@ -1,0 +1,53 @@
+{
+  "findings": [
+    [
+      "WEIGHT",
+      "contradiction",
+      "T-124"
+    ]
+  ],
+  "documents": {
+    "PO": [
+      {
+        "order_id": "P-1024",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "T-124",
+        "product": "Demo lamp",
+        "quantity": "124",
+        "unit": "PCS",
+        "unit_price": "16",
+        "currency": "USD"
+      }
+    ],
+    "CI": [
+      {
+        "order_id": "P-1024",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "T-124",
+        "product": "Demo lamp",
+        "quantity": "124",
+        "unit": "PCS",
+        "invoice_id": "INV-P-1024",
+        "unit_price": "16",
+        "currency": "USD",
+        "line_amount": "1984"
+      }
+    ],
+    "PL": [
+      {
+        "order_id": "P-1024",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "T-124",
+        "product": "Demo lamp",
+        "quantity": "124",
+        "unit": "PCS",
+        "packages": "10",
+        "net_kg": "120",
+        "gross_kg": "110"
+      }
+    ]
+  }
+}

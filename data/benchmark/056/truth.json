@@ -1,0 +1,52 @@
+{
+  "findings": [
+    [
+      "WEIGHT",
+      "review",
+      "T-155"
+    ]
+  ],
+  "documents": {
+    "PO": [
+      {
+        "order_id": "P-1055",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "T-155",
+        "product": "Demo lamp",
+        "quantity": "155",
+        "unit": "PCS",
+        "unit_price": "12",
+        "currency": "USD"
+      }
+    ],
+    "CI": [
+      {
+        "order_id": "P-1055",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "T-155",
+        "product": "Demo lamp",
+        "quantity": "155",
+        "unit": "PCS",
+        "invoice_id": "INV-P-1055",
+        "unit_price": "12",
+        "currency": "USD",
+        "line_amount": "1860"
+      }
+    ],
+    "PL": [
+      {
+        "order_id": "P-1055",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "T-155",
+        "product": "Demo lamp",
+        "quantity": "155",
+        "unit": "PCS",
+        "packages": "10",
+        "net_kg": "120"
+      }
+    ]
+  }
+}

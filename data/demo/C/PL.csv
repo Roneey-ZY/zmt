@@ -1,0 +1,3 @@
+﻿order_id,invoice_id,buyer,seller,sku,product,quantity,unit,unit_price,currency,line_amount,packages,net_kg,gross_kg
+PO-999,,Harbor Demo LLC,Pioneer Demo Co.,A-100,Demo lamp,1200,PCS,,,,10,120,
+PO-999,,Harbor Demo LLC,Pioneer Demo Co.,B-200,Demo lamp,50,PCS,,,,10,120,130

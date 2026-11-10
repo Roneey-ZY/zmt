@@ -1,0 +1,64 @@
+{
+  "findings": [
+    [
+      "SKU_DUPLICATE",
+      "review",
+      "T-128"
+    ]
+  ],
+  "documents": {
+    "PO": [
+      {
+        "order_id": "P-1028",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "T-128",
+        "product": "Demo lamp",
+        "quantity": "128",
+        "unit": "PCS",
+        "unit_price": "15",
+        "currency": "USD"
+      },
+      {
+        "order_id": "P-1028",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "T-128",
+        "product": "Demo lamp",
+        "quantity": "128",
+        "unit": "PCS",
+        "unit_price": "15",
+        "currency": "USD"
+      }
+    ],
+    "CI": [
+      {
+        "order_id": "P-1028",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "T-128",
+        "product": "Demo lamp",
+        "quantity": "128",
+        "unit": "PCS",
+        "invoice_id": "INV-P-1028",
+        "unit_price": "15",
+        "currency": "USD",
+        "line_amount": "1920"
+      }
+    ],
+    "PL": [
+      {
+        "order_id": "P-1028",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "T-128",
+        "product": "Demo lamp",
+        "quantity": "128",
+        "unit": "PCS",
+        "packages": "10",
+        "net_kg": "120",
+        "gross_kg": "130"
+      }
+    ]
+  }
+}

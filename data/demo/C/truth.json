@@ -1,0 +1,111 @@
+{
+  "findings": [
+    [
+      "SKU_DUPLICATE",
+      "review",
+      "B-200"
+    ],
+    [
+      "ORDER_LINK",
+      "difference",
+      ""
+    ],
+    [
+      "WEIGHT",
+      "review",
+      "A-100"
+    ]
+  ],
+  "documents": {
+    "PO": [
+      {
+        "order_id": "PO-003",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": " a - 100 ",
+        "product": "Demo lamp",
+        "quantity": "1 200",
+        "unit": "件",
+        "unit_price": "20",
+        "currency": "USD"
+      },
+      {
+        "order_id": "PO-003",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "B-200",
+        "product": "Demo lamp",
+        "quantity": "50",
+        "unit": "PCS",
+        "unit_price": "4",
+        "currency": "USD"
+      }
+    ],
+    "CI": [
+      {
+        "order_id": "PO-003",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "B-200",
+        "product": "Demo lamp",
+        "quantity": "50",
+        "unit": "PCS",
+        "invoice_id": "INV-PO-003",
+        "unit_price": "4",
+        "currency": "USD",
+        "line_amount": "200"
+      },
+      {
+        "order_id": "PO-003",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "A-100",
+        "product": "Demo lamp",
+        "quantity": "1200",
+        "unit": "PCS",
+        "invoice_id": "INV-PO-003",
+        "unit_price": "20",
+        "currency": "USD",
+        "line_amount": "24000"
+      },
+      {
+        "order_id": "PO-003",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "B-200",
+        "product": "Demo lamp",
+        "quantity": "50",
+        "unit": "PCS",
+        "invoice_id": "INV-PO-003",
+        "unit_price": "4",
+        "currency": "USD",
+        "line_amount": "200"
+      }
+    ],
+    "PL": [
+      {
+        "order_id": "PO-999",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "A-100",
+        "product": "Demo lamp",
+        "quantity": "1200",
+        "unit": "PCS",
+        "packages": "10",
+        "net_kg": "120"
+      },
+      {
+        "order_id": "PO-999",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "B-200",
+        "product": "Demo lamp",
+        "quantity": "50",
+        "unit": "PCS",
+        "packages": "10",
+        "net_kg": "120",
+        "gross_kg": "130"
+      }
+    ]
+  }
+}

@@ -1,0 +1,2 @@
+﻿order_id,invoice_id,buyer,seller,sku,product,quantity,unit,unit_price,currency,line_amount,packages,net_kg,gross_kg
+P-1032,INV-P-1032,Harbor Demo LLC,Pioneer Demo Co.,T-132,Demo lamp,132,PCS,15,USD,1980,,,

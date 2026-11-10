@@ -1,0 +1,3 @@
+﻿order_id,invoice_id,buyer,seller,sku,product,quantity,unit,unit_price,currency,line_amount,packages,net_kg,gross_kg
+P-1049,,Harbor Demo LLC,Pioneer Demo Co.,T-149,Demo lamp,149,PCS,,,,10,120,130
+P-1049,,Harbor Demo LLC,Pioneer Demo Co.,ALT-49,Demo lamp,25,PCS,,,,10,120,130

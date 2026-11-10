@@ -1,0 +1,2 @@
+﻿order_id,invoice_id,buyer,seller,sku,product,quantity,unit,unit_price,currency,line_amount,packages,net_kg,gross_kg
+P-1007,,Harbor Demo LLC,Pioneer Demo Co.,T-107,Demo lamp,107,PCS,14,USD,,,,

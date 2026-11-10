@@ -1,0 +1,83 @@
+{
+  "findings": [],
+  "documents": {
+    "PO": [
+      {
+        "order_id": "P-1039",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": " t-139 ",
+        "product": "Demo lamp",
+        "quantity": "139,00",
+        "unit": "件",
+        "unit_price": "16",
+        "currency": "USD"
+      },
+      {
+        "order_id": "P-1039",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "ALT-39",
+        "product": "Demo lamp",
+        "quantity": "25",
+        "unit": "PCS",
+        "unit_price": "3",
+        "currency": "USD"
+      }
+    ],
+    "CI": [
+      {
+        "order_id": "P-1039",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "ALT-39",
+        "product": "Demo lamp",
+        "quantity": "25",
+        "unit": "PCS",
+        "invoice_id": "INV-P-1039",
+        "unit_price": "3",
+        "currency": "USD",
+        "line_amount": "75"
+      },
+      {
+        "order_id": "P-1039",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "T-139",
+        "product": "Demo lamp",
+        "quantity": "139",
+        "unit": "PCS",
+        "invoice_id": "INV-P-1039",
+        "unit_price": "16",
+        "currency": "USD",
+        "line_amount": "2224"
+      }
+    ],
+    "PL": [
+      {
+        "order_id": "P-1039",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "T-139",
+        "product": "Demo lamp",
+        "quantity": "139",
+        "unit": "PCS",
+        "packages": "10",
+        "net_kg": "120",
+        "gross_kg": "130"
+      },
+      {
+        "order_id": "P-1039",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "ALT-39",
+        "product": "Demo lamp",
+        "quantity": "25",
+        "unit": "PCS",
+        "packages": "10",
+        "net_kg": "120",
+        "gross_kg": "130"
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "mode": "live DeepSeek",
+  "elapsed_ms": 7381.327,
+  "counts": {
+    "difference": 3,
+    "contradiction": 1,
+    "review": 0
+  },
+  "tool_log": [
+    {
+      "order": 1,
+      "tool": "extract_document_fields",
+      "status": "ok",
+      "ms": 9.56,
+      "summary": "3 documents, 3 item rows"
+    },
+    {
+      "order": 2,
+      "tool": "normalize_trade_data",
+      "status": "ok",
+      "ms": 0.71,
+      "summary": "16 distinct field values normalized"
+    },
+    {
+      "order": 3,
+      "tool": "audit_document_consistency",
+      "status": "ok",
+      "ms": 0.33,
+      "summary": "8 comparisons, {'difference': 3, 'contradiction': 1, 'review': 0}"
+    },
+    {
+      "order": 4,
+      "tool": "export_audit_report",
+      "status": "ok",
+      "ms": 19.72,
+      "summary": "XLSX generated (10116 bytes)"
+    }
+  ],
+  "summary": {
+    "summary": "审计完成：共 8 项比较，发现 3 项差异和 1 项矛盾。Excel 报告已导出。",
+    "explanations": [
+      {
+        "finding_id": "F001",
+        "explanation": "订单与发票上的数量不一致，建议核对实际出货或分批开票数量。"
+      },
+      {
+        "finding_id": "F002",
+        "explanation": "订单与发票上的单价不一致，建议核对议定单价及计价单位。"
+      },
+      {
+        "finding_id": "F003",
+        "explanation": "发票与装箱单上的数量不一致，建议以实际装箱记录核对。"
+      },
+      {
+        "finding_id": "F004",
+        "explanation": "装箱单净重大于毛重，不符合逻辑，建议复核称重记录。"
+      }
+    ]
+  },
+  "follow_up": {
+    "id": "F004",
+    "question": "为什么毛重和净重这项不通过？请说明本例数值。",
+    "answer": "F004（重量逻辑矛盾）：净重120 kg大于毛重110 kg，不满足0≤净重≤毛重。请复核称重记录与单位kg，确认后更正申报数据。"
+  },
+  "report_sheets": [
+    "审核总览",
+    "单证清单",
+    "异常与复核",
+    "证据",
+    "结构化字段"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "status": "pass",
+  "method": "SDK transport simulation, no external API request",
+  "request": {
+    "method": "POST",
+    "path": "/v1/responses",
+    "status": 503
+  },
+  "app_error": "调用未完成（InternalServerError，HTTP 503）",
+  "ai_tool_log": [],
+  "fallback": "same documents, user clicks the rule mode fallback button",
+  "finding_counts": {
+    "difference": 3,
+    "contradiction": 1,
+    "review": 0
+  },
+  "rule_tool_log": [
+    {
+      "order": 1,
+      "tool": "extract_document_fields",
+      "status": "ok",
+      "ms": 5.4,
+      "summary": "3 documents, 3 item rows"
+    },
+    {
+      "order": 2,
+      "tool": "normalize_trade_data",
+      "status": "ok",
+      "ms": 0.47,
+      "summary": "16 distinct field values normalized"
+    },
+    {
+      "order": 3,
+      "tool": "audit_document_consistency",
+      "status": "ok",
+      "ms": 0.18,
+      "summary": "8 comparisons, {'difference': 3, 'contradiction': 1, 'review': 0}"
+    },
+    {
+      "order": 4,
+      "tool": "export_audit_report",
+      "status": "ok",
+      "ms": 16.18,
+      "summary": "XLSX generated (10116 bytes)"
+    }
+  ],
+  "report_sheets": [
+    "审核总览",
+    "单证清单",
+    "异常与复核",
+    "证据",
+    "结构化字段"
+  ]
+}

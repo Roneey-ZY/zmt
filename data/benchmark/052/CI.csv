@@ -1,0 +1,2 @@
+﻿order_id,invoice_id,buyer,seller,sku,product,quantity,unit,unit_price,currency,line_amount,packages,net_kg,gross_kg
+P-1051,INV-P-1051,Harbor Demo LLC,Pioneer Demo Co.,T-151,Demo lamp,150,PCS,13,USD,1950,,,

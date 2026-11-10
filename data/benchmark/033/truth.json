@@ -1,0 +1,53 @@
+{
+  "findings": [
+    [
+      "UNIT_PRICE",
+      "difference",
+      "T-132"
+    ]
+  ],
+  "documents": {
+    "PO": [
+      {
+        "order_id": "P-1032",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "T-132",
+        "product": "Demo lamp",
+        "quantity": "132",
+        "unit": "PCS",
+        "unit_price": "14",
+        "currency": "USD"
+      }
+    ],
+    "CI": [
+      {
+        "order_id": "P-1032",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "T-132",
+        "product": "Demo lamp",
+        "quantity": "132",
+        "unit": "PCS",
+        "invoice_id": "INV-P-1032",
+        "unit_price": "15",
+        "currency": "USD",
+        "line_amount": "1980"
+      }
+    ],
+    "PL": [
+      {
+        "order_id": "P-1032",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "T-132",
+        "product": "Demo lamp",
+        "quantity": "132",
+        "unit": "PCS",
+        "packages": "10",
+        "net_kg": "120",
+        "gross_kg": "130"
+      }
+    ]
+  }
+}
