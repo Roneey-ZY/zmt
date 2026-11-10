@@ -1,5 +1,9 @@
 # 部署与公开验收
 
+## 更新已有站点
+
+已有 `Roneey-ZY/zmt` 仓库的情况下，登录 GitHub 后将新版源码包中 `tradecheck-agent/` 的内容更新至仓库根目录。保留现有 `.git` 和 Streamlit Secrets。应用重新部署后，在公开链接中确认演示选择器出现案例 D 和 E。先用案例 E 验证无需模型的复审，再用案例 D 验证模型建议及 Excel 下载。改动已在本机验证，公开站点需部署后验收。
+
 ## GitHub 与 Streamlit Community Cloud
 
 1. 登录 GitHub，创建一个空的 **Public** 仓库，例如 `tradecheck-agent`。在本交付的项目目录执行下列命令，将占位的仓库地址换成实际地址。GitHub 提示认证时，在浏览器授权或使用自己的 GitHub CLI 登录。

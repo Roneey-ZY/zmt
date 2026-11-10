@@ -1,0 +1,13 @@
+[
+  {
+    "kind": "CI",
+    "sheet": "货物结算",
+    "row": 3,
+    "extra": {
+      "4": "sku",
+      "6": "quantity",
+      "8": "unit_price",
+      "11": "line_amount"
+    }
+  }
+]

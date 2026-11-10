@@ -1,0 +1,41 @@
+{
+  "documents": {
+    "PO": [
+      {
+        "order_id": "VAL-PO-01",
+        "sku": "SEA-26",
+        "product": "Ceramic coupler",
+        "quantity": "20",
+        "unit": "PCS",
+        "currency": "EUR",
+        "unit_price": "12.50"
+      }
+    ],
+    "CI": [
+      {
+        "order_id": "VAL-PO-01",
+        "sku": "SEA-26",
+        "product": "Ceramic coupler",
+        "quantity": "20,00",
+        "unit": "PC",
+        "currency": "EUR",
+        "unit_price": "12,50",
+        "invoice_id": "VAL-CI-01",
+        "line_amount": "250,00"
+      }
+    ],
+    "PL": [
+      {
+        "order_id": "VAL-PO-01",
+        "sku": "SEA-26",
+        "product": "Ceramic coupler",
+        "quantity": "20",
+        "unit": "PCS",
+        "packages": "2",
+        "net_kg": "5",
+        "gross_kg": "6"
+      }
+    ]
+  },
+  "findings": []
+}

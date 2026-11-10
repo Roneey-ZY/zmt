@@ -1,0 +1,12 @@
+[
+  {
+    "kind": "CI",
+    "row": 1,
+    "extra": {
+      "4": "sku",
+      "6": "quantity",
+      "8": "unit_price",
+      "9": "line_amount"
+    }
+  }
+]

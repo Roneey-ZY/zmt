@@ -1,0 +1,2 @@
+order_id,invoice_id,buyer,seller,sku,product,quantity,unit,unit_price,currency,line_amount,packages,net_kg,gross_kg,Internal handling note
+QA-521,INV-QA-521,Harbor Demo LLC,Pioneer Demo Co.,RC-521,Demo lamp,5,PCS,7,USD,35,,,,Keep this box upright

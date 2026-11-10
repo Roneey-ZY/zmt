@@ -1,0 +1,47 @@
+{
+  "findings": [],
+  "documents": {
+    "PO": [
+      {
+        "order_id": "QA-521",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "RC-521",
+        "product": "Demo lamp",
+        "quantity": "5",
+        "unit": "PCS",
+        "unit_price": "7",
+        "currency": "USD"
+      }
+    ],
+    "CI": [
+      {
+        "order_id": "QA-521",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "RC-521",
+        "product": "Demo lamp",
+        "quantity": "5",
+        "unit": "PCS",
+        "invoice_id": "INV-QA-521",
+        "unit_price": "7",
+        "currency": "USD",
+        "line_amount": "35"
+      }
+    ],
+    "PL": [
+      {
+        "order_id": "QA-521",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "RC-521",
+        "product": "Demo lamp",
+        "quantity": "5",
+        "unit": "PCS",
+        "packages": "10",
+        "net_kg": "120",
+        "gross_kg": "130"
+      }
+    ]
+  }
+}

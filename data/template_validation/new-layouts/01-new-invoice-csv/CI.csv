@@ -1,0 +1,3 @@
+PO No;Buyer;Seller;Article Ref.;Product;Units Invoiced;Unit;Selling Price per Unit;Invoice Number;Currency;Extended Net
+QA-731;Harbor Demo LLC;Pioneer Demo Co.;RC-732;Demo lamp;10;PCS;7;INV-QA-731;USD;70
+QA-731;Harbor Demo LLC;Pioneer Demo Co.;RC-731;Demo lamp;23;PCS;12;INV-QA-731;USD;276

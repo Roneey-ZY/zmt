@@ -1,0 +1,94 @@
+{
+  "findings": [
+    [
+      "CI_PL_QTY",
+      "difference",
+      "RC-951"
+    ],
+    [
+      "WEIGHT",
+      "contradiction",
+      "RC-952"
+    ]
+  ],
+  "documents": {
+    "PO": [
+      {
+        "order_id": "QA-951",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "RC-951",
+        "product": "Demo lamp",
+        "quantity": "12",
+        "unit": "PCS",
+        "unit_price": "5",
+        "currency": "USD"
+      },
+      {
+        "order_id": "QA-951",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "RC-952",
+        "product": "Demo lamp",
+        "quantity": "9",
+        "unit": "PCS",
+        "unit_price": "3",
+        "currency": "USD"
+      }
+    ],
+    "CI": [
+      {
+        "order_id": "QA-951",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "RC-951",
+        "product": "Demo lamp",
+        "quantity": "12",
+        "unit": "PCS",
+        "invoice_id": "INV-QA-951",
+        "unit_price": "5",
+        "currency": "USD",
+        "line_amount": "60"
+      },
+      {
+        "order_id": "QA-951",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "RC-952",
+        "product": "Demo lamp",
+        "quantity": "9",
+        "unit": "PCS",
+        "invoice_id": "INV-QA-951",
+        "unit_price": "3",
+        "currency": "USD",
+        "line_amount": "27"
+      }
+    ],
+    "PL": [
+      {
+        "order_id": "QA-951",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "RC-951",
+        "product": "Demo lamp",
+        "quantity": "11",
+        "unit": "PCS",
+        "packages": "10",
+        "net_kg": "120",
+        "gross_kg": "130"
+      },
+      {
+        "order_id": "QA-951",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "RC-952",
+        "product": "Demo lamp",
+        "quantity": "9",
+        "unit": "PCS",
+        "packages": "10",
+        "net_kg": "11",
+        "gross_kg": "8"
+      }
+    ]
+  }
+}

@@ -1,0 +1,3 @@
+﻿order_id,invoice_id,buyer,seller,sku,product,quantity,unit,unit_price,currency,line_amount,packages,net_kg,gross_kg
+QA-951,INV-QA-951,Harbor Demo LLC,Pioneer Demo Co.,RC-951,Demo lamp,12,PCS,5,USD,60,,,
+QA-951,INV-QA-951,Harbor Demo LLC,Pioneer Demo Co.,RC-952,Demo lamp,9,PCS,3,USD,27,,,

@@ -1,0 +1,2 @@
+﻿order_id,invoice_id,buyer,seller,sku,product,quantity,unit,unit_price,currency,line_amount,packages,net_kg,gross_kg
+QA-841,,Harbor Demo LLC,Pioneer Demo Co.,RC-841,Demo lamp,16,PCS,4,USD,,,,

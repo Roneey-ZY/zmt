@@ -1,0 +1,2100 @@
+{
+  "regression": {
+    "baseline": {
+      "summary": {
+        "cases": 5,
+        "end_to_end_success_rate": 0.6,
+        "field_accuracy": 0.91971,
+        "mean_ms": 28.23,
+        "median_ms": 23.559,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 4,
+          "precision": 1.0,
+          "recall": 0.2
+        },
+        "review": {
+          "tp": 1,
+          "fp": 6,
+          "fn": 0,
+          "precision": 0.14286,
+          "recall": 1.0
+        }
+      },
+      "records": [
+        {
+          "case": "01-semicolon-eu-decimal",
+          "elapsed_ms": 23.559,
+          "success": true,
+          "expected_findings": [],
+          "actual_findings": [],
+          "field_differences": [],
+          "field_correct": 24,
+          "field_count": 24,
+          "anomaly": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "review": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "error": null,
+          "tools": [
+            {
+              "order": 1,
+              "tool": "extract_document_fields",
+              "status": "ok",
+              "ms": 7.69,
+              "summary": "3 documents, 3 item rows"
+            },
+            {
+              "order": 2,
+              "tool": "normalize_trade_data",
+              "status": "ok",
+              "ms": 0.43,
+              "summary": "15 distinct field values normalized"
+            },
+            {
+              "order": 3,
+              "tool": "audit_document_consistency",
+              "status": "ok",
+              "ms": 0.11,
+              "summary": "8 comparisons, {'difference': 0, 'contradiction': 0, 'review': 0}"
+            },
+            {
+              "order": 4,
+              "tool": "export_audit_report",
+              "status": "ok",
+              "ms": 15.31,
+              "summary": "XLSX generated (9088 bytes)"
+            }
+          ]
+        },
+        {
+          "case": "02-ruled-invoice-two-pages",
+          "elapsed_ms": 51.711,
+          "success": true,
+          "expected_findings": [
+            [
+              "LINE_AMOUNT",
+              "contradiction",
+              "AE-123"
+            ]
+          ],
+          "actual_findings": [
+            [
+              "LINE_AMOUNT",
+              "contradiction",
+              "AE-123"
+            ]
+          ],
+          "field_differences": [],
+          "field_correct": 42,
+          "field_count": 42,
+          "anomaly": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "review": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "error": null,
+          "tools": [
+            {
+              "order": 1,
+              "tool": "extract_document_fields",
+              "status": "ok",
+              "ms": 18.85,
+              "summary": "3 documents, 6 item rows"
+            },
+            {
+              "order": 2,
+              "tool": "normalize_trade_data",
+              "status": "ok",
+              "ms": 0.09,
+              "summary": "17 distinct field values normalized"
+            },
+            {
+              "order": 3,
+              "tool": "audit_document_consistency",
+              "status": "ok",
+              "ms": 0.15,
+              "summary": "13 comparisons, {'difference': 0, 'contradiction': 1, 'review': 0}"
+            },
+            {
+              "order": 4,
+              "tool": "export_audit_report",
+              "status": "ok",
+              "ms": 32.6,
+              "summary": "XLSX generated (9991 bytes)"
+            }
+          ]
+        },
+        {
+          "case": "03-unfamiliar-invoice-columns",
+          "elapsed_ms": 19.921,
+          "success": false,
+          "expected_findings": [
+            [
+              "PO_CI_QTY",
+              "difference",
+              "VTX-401"
+            ],
+            [
+              "CI_PL_QTY",
+              "difference",
+              "VTX-401"
+            ]
+          ],
+          "actual_findings": [
+            [
+              "SKU_MISSING",
+              "review",
+              ""
+            ],
+            [
+              "SKU_LINK",
+              "review",
+              "VTX-401"
+            ],
+            [
+              "SKU_LINK",
+              "review",
+              "VTX-401"
+            ],
+            [
+              "LINE_AMOUNT",
+              "review",
+              ""
+            ]
+          ],
+          "field_differences": [
+            {
+              "field": [
+                "CI",
+                0,
+                "line_amount"
+              ],
+              "expected": "72.00",
+              "actual": null
+            },
+            {
+              "field": [
+                "CI",
+                0,
+                "quantity"
+              ],
+              "expected": "8",
+              "actual": null
+            },
+            {
+              "field": [
+                "CI",
+                0,
+                "sku"
+              ],
+              "expected": "VTX-401",
+              "actual": null
+            },
+            {
+              "field": [
+                "CI",
+                0,
+                "unit_price"
+              ],
+              "expected": "9.00",
+              "actual": null
+            }
+          ],
+          "field_correct": 20,
+          "field_count": 24,
+          "anomaly": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 2
+          },
+          "review": {
+            "tp": 0,
+            "fp": 4,
+            "fn": 0
+          },
+          "error": null,
+          "tools": [
+            {
+              "order": 1,
+              "tool": "extract_document_fields",
+              "status": "ok",
+              "ms": 5.27,
+              "summary": "3 documents, 3 item rows"
+            },
+            {
+              "order": 2,
+              "tool": "normalize_trade_data",
+              "status": "ok",
+              "ms": 0.05,
+              "summary": "11 distinct field values normalized"
+            },
+            {
+              "order": 3,
+              "tool": "audit_document_consistency",
+              "status": "ok",
+              "ms": 0.1,
+              "summary": "4 comparisons, {'difference': 0, 'contradiction': 0, 'review': 4}"
+            },
+            {
+              "order": 4,
+              "tool": "export_audit_report",
+              "status": "ok",
+              "ms": 14.49,
+              "summary": "XLSX generated (9857 bytes)"
+            }
+          ]
+        },
+        {
+          "case": "04-missing-gross-weight",
+          "elapsed_ms": 21.107,
+          "success": true,
+          "expected_findings": [
+            [
+              "WEIGHT",
+              "review",
+              "PC-604"
+            ]
+          ],
+          "actual_findings": [
+            [
+              "WEIGHT",
+              "review",
+              "PC-604"
+            ]
+          ],
+          "field_differences": [],
+          "field_correct": 23,
+          "field_count": 23,
+          "anomaly": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "review": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "error": null,
+          "tools": [
+            {
+              "order": 1,
+              "tool": "extract_document_fields",
+              "status": "ok",
+              "ms": 5.86,
+              "summary": "3 documents, 3 item rows"
+            },
+            {
+              "order": 2,
+              "tool": "normalize_trade_data",
+              "status": "ok",
+              "ms": 0.05,
+              "summary": "11 distinct field values normalized"
+            },
+            {
+              "order": 3,
+              "tool": "audit_document_consistency",
+              "status": "ok",
+              "ms": 0.1,
+              "summary": "7 comparisons, {'difference': 0, 'contradiction': 0, 'review': 1}"
+            },
+            {
+              "order": 4,
+              "tool": "export_audit_report",
+              "status": "ok",
+              "ms": 15.08,
+              "summary": "XLSX generated (9443 bytes)"
+            }
+          ]
+        },
+        {
+          "case": "05-borderless-packing-list",
+          "elapsed_ms": 24.853,
+          "success": false,
+          "expected_findings": [
+            [
+              "CI_PL_QTY",
+              "difference",
+              "BOX-803"
+            ],
+            [
+              "WEIGHT",
+              "contradiction",
+              "BOX-803"
+            ]
+          ],
+          "actual_findings": [
+            [
+              "NO_ITEMS",
+              "review",
+              ""
+            ],
+            [
+              "SKU_LINK",
+              "review",
+              "BOX-803"
+            ]
+          ],
+          "field_differences": [
+            {
+              "field": [
+                "PL",
+                0,
+                "gross_kg"
+              ],
+              "expected": "5",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                0,
+                "net_kg"
+              ],
+              "expected": "6",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                0,
+                "packages"
+              ],
+              "expected": "2",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                0,
+                "product"
+              ],
+              "expected": "Nozzle holder",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                0,
+                "quantity"
+              ],
+              "expected": "10",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                0,
+                "sku"
+              ],
+              "expected": "BOX-803",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                0,
+                "unit"
+              ],
+              "expected": "PCS",
+              "actual": null
+            }
+          ],
+          "field_correct": 17,
+          "field_count": 24,
+          "anomaly": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 2
+          },
+          "review": {
+            "tp": 0,
+            "fp": 2,
+            "fn": 0
+          },
+          "error": null,
+          "tools": [
+            {
+              "order": 1,
+              "tool": "extract_document_fields",
+              "status": "ok",
+              "ms": 10.17,
+              "summary": "3 documents, 2 item rows"
+            },
+            {
+              "order": 2,
+              "tool": "normalize_trade_data",
+              "status": "ok",
+              "ms": 0.05,
+              "summary": "9 distinct field values normalized"
+            },
+            {
+              "order": 3,
+              "tool": "audit_document_consistency",
+              "status": "ok",
+              "ms": 0.1,
+              "summary": "6 comparisons, {'difference': 0, 'contradiction': 0, 'review': 2}"
+            },
+            {
+              "order": 4,
+              "tool": "export_audit_report",
+              "status": "ok",
+              "ms": 14.52,
+              "summary": "XLSX generated (9421 bytes)"
+            }
+          ]
+        }
+      ]
+    },
+    "confirmed": {
+      "summary": {
+        "cases": 5,
+        "end_to_end_success_rate": 1.0,
+        "field_accuracy": 1.0,
+        "mean_ms": 38.445,
+        "median_ms": 38.144,
+        "anomaly": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "review": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0
+        }
+      },
+      "records": [
+        {
+          "case": "01-semicolon-eu-decimal",
+          "elapsed_ms": 23.559,
+          "success": true,
+          "expected_findings": [],
+          "actual_findings": [],
+          "field_differences": [],
+          "field_correct": 24,
+          "field_count": 24,
+          "anomaly": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "review": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "error": null,
+          "tools": [
+            {
+              "order": 1,
+              "tool": "extract_document_fields",
+              "status": "ok",
+              "ms": 7.69,
+              "summary": "3 documents, 3 item rows"
+            },
+            {
+              "order": 2,
+              "tool": "normalize_trade_data",
+              "status": "ok",
+              "ms": 0.43,
+              "summary": "15 distinct field values normalized"
+            },
+            {
+              "order": 3,
+              "tool": "audit_document_consistency",
+              "status": "ok",
+              "ms": 0.11,
+              "summary": "8 comparisons, {'difference': 0, 'contradiction': 0, 'review': 0}"
+            },
+            {
+              "order": 4,
+              "tool": "export_audit_report",
+              "status": "ok",
+              "ms": 15.31,
+              "summary": "XLSX generated (9088 bytes)"
+            }
+          ],
+          "confirmations": [],
+          "compared_before": 8,
+          "compared_after": 8
+        },
+        {
+          "case": "02-ruled-invoice-two-pages",
+          "elapsed_ms": 51.711,
+          "success": true,
+          "expected_findings": [
+            [
+              "LINE_AMOUNT",
+              "contradiction",
+              "AE-123"
+            ]
+          ],
+          "actual_findings": [
+            [
+              "LINE_AMOUNT",
+              "contradiction",
+              "AE-123"
+            ]
+          ],
+          "field_differences": [],
+          "field_correct": 42,
+          "field_count": 42,
+          "anomaly": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "review": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "error": null,
+          "tools": [
+            {
+              "order": 1,
+              "tool": "extract_document_fields",
+              "status": "ok",
+              "ms": 18.85,
+              "summary": "3 documents, 6 item rows"
+            },
+            {
+              "order": 2,
+              "tool": "normalize_trade_data",
+              "status": "ok",
+              "ms": 0.09,
+              "summary": "17 distinct field values normalized"
+            },
+            {
+              "order": 3,
+              "tool": "audit_document_consistency",
+              "status": "ok",
+              "ms": 0.15,
+              "summary": "13 comparisons, {'difference': 0, 'contradiction': 1, 'review': 0}"
+            },
+            {
+              "order": 4,
+              "tool": "export_audit_report",
+              "status": "ok",
+              "ms": 32.6,
+              "summary": "XLSX generated (9991 bytes)"
+            }
+          ],
+          "confirmations": [],
+          "compared_before": 13,
+          "compared_after": 13
+        },
+        {
+          "case": "03-unfamiliar-invoice-columns",
+          "elapsed_ms": 38.144,
+          "success": true,
+          "expected_findings": [
+            [
+              "PO_CI_QTY",
+              "difference",
+              "VTX-401"
+            ],
+            [
+              "CI_PL_QTY",
+              "difference",
+              "VTX-401"
+            ]
+          ],
+          "actual_findings": [
+            [
+              "PO_CI_QTY",
+              "difference",
+              "VTX-401"
+            ],
+            [
+              "CI_PL_QTY",
+              "difference",
+              "VTX-401"
+            ]
+          ],
+          "field_differences": [],
+          "field_correct": 24,
+          "field_count": 24,
+          "anomaly": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0
+          },
+          "review": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "error": null,
+          "tools": [
+            {
+              "order": 1,
+              "tool": "apply_confirmed_table",
+              "status": "ok",
+              "ms": 0.39,
+              "summary": "1 item rows, 9 confirmed columns"
+            },
+            {
+              "order": 2,
+              "tool": "normalize_trade_data",
+              "status": "ok",
+              "ms": 0.08,
+              "summary": "13 distinct field values normalized"
+            },
+            {
+              "order": 3,
+              "tool": "audit_document_consistency",
+              "status": "ok",
+              "ms": 0.14,
+              "summary": "8 comparisons, {'difference': 2, 'contradiction': 0, 'review': 0}"
+            },
+            {
+              "order": 4,
+              "tool": "export_audit_report",
+              "status": "ok",
+              "ms": 16.98,
+              "summary": "XLSX generated (10773 bytes)"
+            }
+          ],
+          "confirmations": [
+            {
+              "kind": "CI",
+              "header": {
+                "file": "CI.csv",
+                "page": null,
+                "sheet": null,
+                "row": 1,
+                "column": null
+              },
+              "confirmed": {
+                "1": "order_id",
+                "2": "invoice_id",
+                "3": "currency",
+                "5": "product",
+                "7": "unit",
+                "4": "sku",
+                "6": "quantity",
+                "8": "unit_price",
+                "9": "line_amount"
+              }
+            }
+          ],
+          "compared_before": 4,
+          "compared_after": 8
+        },
+        {
+          "case": "04-missing-gross-weight",
+          "elapsed_ms": 21.107,
+          "success": true,
+          "expected_findings": [
+            [
+              "WEIGHT",
+              "review",
+              "PC-604"
+            ]
+          ],
+          "actual_findings": [
+            [
+              "WEIGHT",
+              "review",
+              "PC-604"
+            ]
+          ],
+          "field_differences": [],
+          "field_correct": 23,
+          "field_count": 23,
+          "anomaly": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "review": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "error": null,
+          "tools": [
+            {
+              "order": 1,
+              "tool": "extract_document_fields",
+              "status": "ok",
+              "ms": 5.86,
+              "summary": "3 documents, 3 item rows"
+            },
+            {
+              "order": 2,
+              "tool": "normalize_trade_data",
+              "status": "ok",
+              "ms": 0.05,
+              "summary": "11 distinct field values normalized"
+            },
+            {
+              "order": 3,
+              "tool": "audit_document_consistency",
+              "status": "ok",
+              "ms": 0.1,
+              "summary": "7 comparisons, {'difference': 0, 'contradiction': 0, 'review': 1}"
+            },
+            {
+              "order": 4,
+              "tool": "export_audit_report",
+              "status": "ok",
+              "ms": 15.08,
+              "summary": "XLSX generated (9443 bytes)"
+            }
+          ],
+          "confirmations": [],
+          "compared_before": 7,
+          "compared_after": 7
+        },
+        {
+          "case": "05-borderless-packing-list",
+          "elapsed_ms": 57.702,
+          "success": true,
+          "expected_findings": [
+            [
+              "CI_PL_QTY",
+              "difference",
+              "BOX-803"
+            ],
+            [
+              "WEIGHT",
+              "contradiction",
+              "BOX-803"
+            ]
+          ],
+          "actual_findings": [
+            [
+              "CI_PL_QTY",
+              "difference",
+              "BOX-803"
+            ],
+            [
+              "WEIGHT",
+              "contradiction",
+              "BOX-803"
+            ]
+          ],
+          "field_differences": [],
+          "field_correct": 24,
+          "field_count": 24,
+          "anomaly": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0
+          },
+          "review": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "error": null,
+          "tools": [
+            {
+              "order": 1,
+              "tool": "apply_confirmed_table",
+              "status": "ok",
+              "ms": 7.85,
+              "summary": "1 item rows, 7 confirmed columns"
+            },
+            {
+              "order": 2,
+              "tool": "normalize_trade_data",
+              "status": "ok",
+              "ms": 0.07,
+              "summary": "13 distinct field values normalized"
+            },
+            {
+              "order": 3,
+              "tool": "audit_document_consistency",
+              "status": "ok",
+              "ms": 0.1,
+              "summary": "8 comparisons, {'difference': 1, 'contradiction': 1, 'review': 0}"
+            },
+            {
+              "order": 4,
+              "tool": "export_audit_report",
+              "status": "ok",
+              "ms": 18.05,
+              "summary": "XLSX generated (10787 bytes)"
+            }
+          ],
+          "confirmations": [
+            {
+              "kind": "PL",
+              "header": {
+                "file": "PL.pdf",
+                "page": 1,
+                "sheet": null,
+                "row": 4,
+                "column": null
+              },
+              "confirmed": {
+                "1": "sku",
+                "2": "product",
+                "3": "quantity",
+                "4": "unit",
+                "5": "packages",
+                "6": "net_kg",
+                "7": "gross_kg"
+              }
+            }
+          ],
+          "compared_before": 6,
+          "compared_after": 8
+        }
+      ]
+    },
+    "model": [
+      {
+        "case": "03-unfamiliar-invoice-columns",
+        "kind": "CI",
+        "expected": {
+          "4": "sku",
+          "6": "quantity",
+          "8": "unit_price",
+          "9": "line_amount"
+        },
+        "proposed": {
+          "4": "sku",
+          "6": "quantity",
+          "8": "unit_price",
+          "9": "line_amount"
+        },
+        "error": null,
+        "correct": 4,
+        "elapsed_ms": 2162.335
+      }
+    ]
+  },
+  "new-layouts": {
+    "baseline": {
+      "summary": {
+        "cases": 5,
+        "end_to_end_success_rate": 0.2,
+        "field_accuracy": 0.82703,
+        "mean_ms": 24.763,
+        "median_ms": 24.868,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 5,
+          "precision": null,
+          "recall": 0.0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 17,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0
+        }
+      },
+      "records": [
+        {
+          "case": "01-new-invoice-csv",
+          "elapsed_ms": 21.65,
+          "success": false,
+          "expected_findings": [
+            [
+              "PO_CI_QTY",
+              "difference",
+              "RC-731"
+            ],
+            [
+              "CI_PL_QTY",
+              "difference",
+              "RC-731"
+            ]
+          ],
+          "actual_findings": [
+            [
+              "SKU_MISSING",
+              "review",
+              ""
+            ],
+            [
+              "SKU_MISSING",
+              "review",
+              ""
+            ],
+            [
+              "SKU_LINK",
+              "review",
+              "RC-731"
+            ],
+            [
+              "SKU_LINK",
+              "review",
+              "RC-732"
+            ],
+            [
+              "SKU_LINK",
+              "review",
+              "RC-731"
+            ],
+            [
+              "SKU_LINK",
+              "review",
+              "RC-732"
+            ],
+            [
+              "LINE_AMOUNT",
+              "review",
+              ""
+            ],
+            [
+              "LINE_AMOUNT",
+              "review",
+              ""
+            ]
+          ],
+          "field_differences": [
+            {
+              "field": [
+                "CI",
+                0,
+                "line_amount"
+              ],
+              "expected": "70",
+              "actual": null
+            },
+            {
+              "field": [
+                "CI",
+                0,
+                "quantity"
+              ],
+              "expected": "10",
+              "actual": null
+            },
+            {
+              "field": [
+                "CI",
+                0,
+                "sku"
+              ],
+              "expected": "RC-732",
+              "actual": null
+            },
+            {
+              "field": [
+                "CI",
+                0,
+                "unit_price"
+              ],
+              "expected": "7",
+              "actual": null
+            },
+            {
+              "field": [
+                "CI",
+                1,
+                "line_amount"
+              ],
+              "expected": "276",
+              "actual": null
+            },
+            {
+              "field": [
+                "CI",
+                1,
+                "quantity"
+              ],
+              "expected": "23",
+              "actual": null
+            },
+            {
+              "field": [
+                "CI",
+                1,
+                "sku"
+              ],
+              "expected": "RC-731",
+              "actual": null
+            },
+            {
+              "field": [
+                "CI",
+                1,
+                "unit_price"
+              ],
+              "expected": "12",
+              "actual": null
+            }
+          ],
+          "field_correct": 40,
+          "field_count": 48,
+          "anomaly": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 2
+          },
+          "review": {
+            "tp": 0,
+            "fp": 8,
+            "fn": 0
+          },
+          "error": null,
+          "tools": [
+            {
+              "order": 1,
+              "tool": "extract_document_fields",
+              "status": "ok",
+              "ms": 1.02,
+              "summary": "3 documents, 6 item rows"
+            },
+            {
+              "order": 2,
+              "tool": "normalize_trade_data",
+              "status": "ok",
+              "ms": 0.06,
+              "summary": "16 distinct field values normalized"
+            },
+            {
+              "order": 3,
+              "tool": "audit_document_consistency",
+              "status": "ok",
+              "ms": 0.12,
+              "summary": "5 comparisons, {'difference': 0, 'contradiction': 0, 'review': 8}"
+            },
+            {
+              "order": 4,
+              "tool": "export_audit_report",
+              "status": "ok",
+              "ms": 20.43,
+              "summary": "XLSX generated (10762 bytes)"
+            }
+          ]
+        },
+        {
+          "case": "02-new-invoice-xlsx",
+          "elapsed_ms": 28.334,
+          "success": false,
+          "expected_findings": [
+            [
+              "UNIT_PRICE",
+              "difference",
+              "RC-841"
+            ]
+          ],
+          "actual_findings": [
+            [
+              "SKU_MISSING",
+              "review",
+              ""
+            ],
+            [
+              "SKU_LINK",
+              "review",
+              "RC-841"
+            ],
+            [
+              "SKU_LINK",
+              "review",
+              "RC-841"
+            ],
+            [
+              "LINE_AMOUNT",
+              "review",
+              ""
+            ]
+          ],
+          "field_differences": [
+            {
+              "field": [
+                "CI",
+                0,
+                "line_amount"
+              ],
+              "expected": "80",
+              "actual": null
+            },
+            {
+              "field": [
+                "CI",
+                0,
+                "quantity"
+              ],
+              "expected": "16",
+              "actual": null
+            },
+            {
+              "field": [
+                "CI",
+                0,
+                "sku"
+              ],
+              "expected": "RC-841",
+              "actual": null
+            },
+            {
+              "field": [
+                "CI",
+                0,
+                "unit_price"
+              ],
+              "expected": "5",
+              "actual": null
+            }
+          ],
+          "field_correct": 26,
+          "field_count": 30,
+          "anomaly": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 1
+          },
+          "review": {
+            "tp": 0,
+            "fp": 4,
+            "fn": 0
+          },
+          "error": null,
+          "tools": [
+            {
+              "order": 1,
+              "tool": "extract_document_fields",
+              "status": "ok",
+              "ms": 3.82,
+              "summary": "3 documents, 3 item rows"
+            },
+            {
+              "order": 2,
+              "tool": "normalize_trade_data",
+              "status": "ok",
+              "ms": 0.05,
+              "summary": "13 distinct field values normalized"
+            },
+            {
+              "order": 3,
+              "tool": "audit_document_consistency",
+              "status": "ok",
+              "ms": 0.1,
+              "summary": "4 comparisons, {'difference': 0, 'contradiction': 0, 'review': 4}"
+            },
+            {
+              "order": 4,
+              "tool": "export_audit_report",
+              "status": "ok",
+              "ms": 24.34,
+              "summary": "XLSX generated (10053 bytes)"
+            }
+          ]
+        },
+        {
+          "case": "03-two-page-borderless",
+          "elapsed_ms": 32.191,
+          "success": false,
+          "expected_findings": [
+            [
+              "CI_PL_QTY",
+              "difference",
+              "RC-951"
+            ],
+            [
+              "WEIGHT",
+              "contradiction",
+              "RC-952"
+            ]
+          ],
+          "actual_findings": [
+            [
+              "NO_ITEMS",
+              "review",
+              ""
+            ],
+            [
+              "SKU_LINK",
+              "review",
+              "RC-951"
+            ],
+            [
+              "SKU_LINK",
+              "review",
+              "RC-952"
+            ]
+          ],
+          "field_differences": [
+            {
+              "field": [
+                "PL",
+                0,
+                "gross_kg"
+              ],
+              "expected": "130",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                0,
+                "net_kg"
+              ],
+              "expected": "120",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                0,
+                "packages"
+              ],
+              "expected": "10",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                0,
+                "product"
+              ],
+              "expected": "Demo lamp",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                0,
+                "quantity"
+              ],
+              "expected": "11",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                0,
+                "sku"
+              ],
+              "expected": "RC-951",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                0,
+                "unit"
+              ],
+              "expected": "PCS",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                1,
+                "gross_kg"
+              ],
+              "expected": "8",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                1,
+                "net_kg"
+              ],
+              "expected": "11",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                1,
+                "packages"
+              ],
+              "expected": "10",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                1,
+                "product"
+              ],
+              "expected": "Demo lamp",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                1,
+                "quantity"
+              ],
+              "expected": "9",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                1,
+                "sku"
+              ],
+              "expected": "RC-952",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                1,
+                "unit"
+              ],
+              "expected": "PCS",
+              "actual": null
+            }
+          ],
+          "field_correct": 34,
+          "field_count": 48,
+          "anomaly": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 2
+          },
+          "review": {
+            "tp": 0,
+            "fp": 3,
+            "fn": 0
+          },
+          "error": null,
+          "tools": [
+            {
+              "order": 1,
+              "tool": "extract_document_fields",
+              "status": "ok",
+              "ms": 14.11,
+              "summary": "3 documents, 4 item rows"
+            },
+            {
+              "order": 2,
+              "tool": "normalize_trade_data",
+              "status": "ok",
+              "ms": 0.08,
+              "summary": "15 distinct field values normalized"
+            },
+            {
+              "order": 3,
+              "tool": "audit_document_consistency",
+              "status": "ok",
+              "ms": 0.17,
+              "summary": "9 comparisons, {'difference': 0, 'contradiction': 0, 'review': 3}"
+            },
+            {
+              "order": 4,
+              "tool": "export_audit_report",
+              "status": "ok",
+              "ms": 17.81,
+              "summary": "XLSX generated (9928 bytes)"
+            }
+          ]
+        },
+        {
+          "case": "04-missing-weight-stays-review",
+          "elapsed_ms": 24.868,
+          "success": false,
+          "expected_findings": [
+            [
+              "WEIGHT",
+              "review",
+              "RC-661"
+            ]
+          ],
+          "actual_findings": [
+            [
+              "NO_ITEMS",
+              "review",
+              ""
+            ],
+            [
+              "SKU_LINK",
+              "review",
+              "RC-661"
+            ]
+          ],
+          "field_differences": [
+            {
+              "field": [
+                "PL",
+                0,
+                "net_kg"
+              ],
+              "expected": "120",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                0,
+                "packages"
+              ],
+              "expected": "10",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                0,
+                "product"
+              ],
+              "expected": "Demo lamp",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                0,
+                "quantity"
+              ],
+              "expected": "8",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                0,
+                "sku"
+              ],
+              "expected": "RC-661",
+              "actual": null
+            },
+            {
+              "field": [
+                "PL",
+                0,
+                "unit"
+              ],
+              "expected": "PCS",
+              "actual": null
+            }
+          ],
+          "field_correct": 23,
+          "field_count": 29,
+          "anomaly": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "review": {
+            "tp": 0,
+            "fp": 2,
+            "fn": 1
+          },
+          "error": null,
+          "tools": [
+            {
+              "order": 1,
+              "tool": "extract_document_fields",
+              "status": "ok",
+              "ms": 7.38,
+              "summary": "3 documents, 2 item rows"
+            },
+            {
+              "order": 2,
+              "tool": "normalize_trade_data",
+              "status": "ok",
+              "ms": 0.04,
+              "summary": "11 distinct field values normalized"
+            },
+            {
+              "order": 3,
+              "tool": "audit_document_consistency",
+              "status": "ok",
+              "ms": 0.1,
+              "summary": "6 comparisons, {'difference': 0, 'contradiction': 0, 'review': 2}"
+            },
+            {
+              "order": 4,
+              "tool": "export_audit_report",
+              "status": "ok",
+              "ms": 17.33,
+              "summary": "XLSX generated (9562 bytes)"
+            }
+          ]
+        },
+        {
+          "case": "05-optional-column-ignored",
+          "elapsed_ms": 16.773,
+          "success": true,
+          "expected_findings": [],
+          "actual_findings": [],
+          "field_differences": [],
+          "field_correct": 30,
+          "field_count": 30,
+          "anomaly": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "review": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "error": null,
+          "tools": [
+            {
+              "order": 1,
+              "tool": "extract_document_fields",
+              "status": "ok",
+              "ms": 0.8,
+              "summary": "3 documents, 3 item rows"
+            },
+            {
+              "order": 2,
+              "tool": "normalize_trade_data",
+              "status": "ok",
+              "ms": 0.06,
+              "summary": "14 distinct field values normalized"
+            },
+            {
+              "order": 3,
+              "tool": "audit_document_consistency",
+              "status": "ok",
+              "ms": 0.09,
+              "summary": "8 comparisons, {'difference': 0, 'contradiction': 0, 'review': 0}"
+            },
+            {
+              "order": 4,
+              "tool": "export_audit_report",
+              "status": "ok",
+              "ms": 15.82,
+              "summary": "XLSX generated (9206 bytes)"
+            }
+          ]
+        }
+      ]
+    },
+    "confirmed": {
+      "summary": {
+        "cases": 5,
+        "end_to_end_success_rate": 1.0,
+        "field_accuracy": 1.0,
+        "mean_ms": 63.692,
+        "median_ms": 56.37,
+        "anomaly": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0
+        },
+        "review": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0
+        }
+      },
+      "records": [
+        {
+          "case": "01-new-invoice-csv",
+          "elapsed_ms": 41.063,
+          "success": true,
+          "expected_findings": [
+            [
+              "PO_CI_QTY",
+              "difference",
+              "RC-731"
+            ],
+            [
+              "CI_PL_QTY",
+              "difference",
+              "RC-731"
+            ]
+          ],
+          "actual_findings": [
+            [
+              "PO_CI_QTY",
+              "difference",
+              "RC-731"
+            ],
+            [
+              "CI_PL_QTY",
+              "difference",
+              "RC-731"
+            ]
+          ],
+          "field_differences": [],
+          "field_correct": 48,
+          "field_count": 48,
+          "anomaly": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0
+          },
+          "review": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "error": null,
+          "tools": [
+            {
+              "order": 1,
+              "tool": "apply_confirmed_table",
+              "status": "ok",
+              "ms": 0.41,
+              "summary": "2 item rows, 11 confirmed columns"
+            },
+            {
+              "order": 2,
+              "tool": "normalize_trade_data",
+              "status": "ok",
+              "ms": 0.07,
+              "summary": "19 distinct field values normalized"
+            },
+            {
+              "order": 3,
+              "tool": "audit_document_consistency",
+              "status": "ok",
+              "ms": 0.12,
+              "summary": "13 comparisons, {'difference': 2, 'contradiction': 0, 'review': 0}"
+            },
+            {
+              "order": 4,
+              "tool": "export_audit_report",
+              "status": "ok",
+              "ms": 18.43,
+              "summary": "XLSX generated (11421 bytes)"
+            }
+          ],
+          "confirmations": [
+            {
+              "kind": "CI",
+              "header": {
+                "file": "CI.csv",
+                "page": null,
+                "sheet": null,
+                "row": 1,
+                "column": null
+              },
+              "confirmed": {
+                "1": "order_id",
+                "2": "buyer",
+                "3": "seller",
+                "5": "product",
+                "7": "unit",
+                "9": "invoice_id",
+                "10": "currency",
+                "4": "sku",
+                "6": "quantity",
+                "8": "unit_price",
+                "11": "line_amount"
+              }
+            }
+          ],
+          "compared_before": 5,
+          "compared_after": 13
+        },
+        {
+          "case": "02-new-invoice-xlsx",
+          "elapsed_ms": 65.808,
+          "success": true,
+          "expected_findings": [
+            [
+              "UNIT_PRICE",
+              "difference",
+              "RC-841"
+            ]
+          ],
+          "actual_findings": [
+            [
+              "UNIT_PRICE",
+              "difference",
+              "RC-841"
+            ]
+          ],
+          "field_differences": [],
+          "field_correct": 30,
+          "field_count": 30,
+          "anomaly": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "review": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "error": null,
+          "tools": [
+            {
+              "order": 1,
+              "tool": "apply_confirmed_table",
+              "status": "ok",
+              "ms": 4.44,
+              "summary": "1 item rows, 11 confirmed columns"
+            },
+            {
+              "order": 2,
+              "tool": "normalize_trade_data",
+              "status": "ok",
+              "ms": 0.08,
+              "summary": "15 distinct field values normalized"
+            },
+            {
+              "order": 3,
+              "tool": "audit_document_consistency",
+              "status": "ok",
+              "ms": 0.11,
+              "summary": "8 comparisons, {'difference': 1, 'contradiction': 0, 'review': 0}"
+            },
+            {
+              "order": 4,
+              "tool": "export_audit_report",
+              "status": "ok",
+              "ms": 28.17,
+              "summary": "XLSX generated (10876 bytes)"
+            }
+          ],
+          "confirmations": [
+            {
+              "kind": "CI",
+              "header": {
+                "file": "CI.xlsx",
+                "page": null,
+                "sheet": "货物结算",
+                "row": 3,
+                "column": null
+              },
+              "confirmed": {
+                "1": "order_id",
+                "2": "buyer",
+                "3": "seller",
+                "5": "product",
+                "7": "unit",
+                "9": "invoice_id",
+                "10": "currency",
+                "4": "sku",
+                "6": "quantity",
+                "8": "unit_price",
+                "11": "line_amount"
+              }
+            }
+          ],
+          "compared_before": 4,
+          "compared_after": 8
+        },
+        {
+          "case": "03-two-page-borderless",
+          "elapsed_ms": 138.445,
+          "success": true,
+          "expected_findings": [
+            [
+              "CI_PL_QTY",
+              "difference",
+              "RC-951"
+            ],
+            [
+              "WEIGHT",
+              "contradiction",
+              "RC-952"
+            ]
+          ],
+          "actual_findings": [
+            [
+              "CI_PL_QTY",
+              "difference",
+              "RC-951"
+            ],
+            [
+              "WEIGHT",
+              "contradiction",
+              "RC-952"
+            ]
+          ],
+          "field_differences": [],
+          "field_correct": 48,
+          "field_count": 48,
+          "anomaly": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0
+          },
+          "review": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "error": null,
+          "tools": [
+            {
+              "order": 1,
+              "tool": "apply_confirmed_table",
+              "status": "ok",
+              "ms": 13.16,
+              "summary": "2 item rows, 7 confirmed columns"
+            },
+            {
+              "order": 2,
+              "tool": "normalize_trade_data",
+              "status": "ok",
+              "ms": 0.1,
+              "summary": "21 distinct field values normalized"
+            },
+            {
+              "order": 3,
+              "tool": "audit_document_consistency",
+              "status": "ok",
+              "ms": 0.12,
+              "summary": "13 comparisons, {'difference': 1, 'contradiction': 1, 'review': 0}"
+            },
+            {
+              "order": 4,
+              "tool": "export_audit_report",
+              "status": "ok",
+              "ms": 21.09,
+              "summary": "XLSX generated (11571 bytes)"
+            }
+          ],
+          "confirmations": [
+            {
+              "kind": "PL",
+              "header": {
+                "file": "PL.pdf",
+                "page": 1,
+                "sheet": null,
+                "row": 5,
+                "column": null
+              },
+              "confirmed": {
+                "1": "sku",
+                "2": "product",
+                "3": "quantity",
+                "4": "unit",
+                "5": "packages",
+                "6": "net_kg",
+                "7": "gross_kg"
+              }
+            },
+            {
+              "kind": "PL",
+              "header": {
+                "file": "PL.pdf",
+                "page": 2,
+                "sheet": null,
+                "row": 5,
+                "column": null
+              },
+              "confirmed": {
+                "1": "sku",
+                "2": "product",
+                "3": "quantity",
+                "4": "unit",
+                "5": "packages",
+                "6": "net_kg",
+                "7": "gross_kg"
+              }
+            }
+          ],
+          "compared_before": 9,
+          "compared_after": 13
+        },
+        {
+          "case": "04-missing-weight-stays-review",
+          "elapsed_ms": 56.37,
+          "success": true,
+          "expected_findings": [
+            [
+              "WEIGHT",
+              "review",
+              "RC-661"
+            ]
+          ],
+          "actual_findings": [
+            [
+              "WEIGHT",
+              "review",
+              "RC-661"
+            ]
+          ],
+          "field_differences": [],
+          "field_correct": 29,
+          "field_count": 29,
+          "anomaly": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "review": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0
+          },
+          "error": null,
+          "tools": [
+            {
+              "order": 1,
+              "tool": "apply_confirmed_table",
+              "status": "ok",
+              "ms": 6.46,
+              "summary": "1 item rows, 7 confirmed columns"
+            },
+            {
+              "order": 2,
+              "tool": "normalize_trade_data",
+              "status": "ok",
+              "ms": 0.06,
+              "summary": "13 distinct field values normalized"
+            },
+            {
+              "order": 3,
+              "tool": "audit_document_consistency",
+              "status": "ok",
+              "ms": 0.09,
+              "summary": "7 comparisons, {'difference': 0, 'contradiction': 0, 'review': 1}"
+            },
+            {
+              "order": 4,
+              "tool": "export_audit_report",
+              "status": "ok",
+              "ms": 18.69,
+              "summary": "XLSX generated (10686 bytes)"
+            }
+          ],
+          "confirmations": [
+            {
+              "kind": "PL",
+              "header": {
+                "file": "PL.pdf",
+                "page": 1,
+                "sheet": null,
+                "row": 5,
+                "column": null
+              },
+              "confirmed": {
+                "1": "sku",
+                "2": "product",
+                "3": "quantity",
+                "4": "unit",
+                "5": "packages",
+                "6": "net_kg",
+                "7": "gross_kg"
+              }
+            }
+          ],
+          "compared_before": 6,
+          "compared_after": 7
+        },
+        {
+          "case": "05-optional-column-ignored",
+          "elapsed_ms": 16.773,
+          "success": true,
+          "expected_findings": [],
+          "actual_findings": [],
+          "field_differences": [],
+          "field_correct": 30,
+          "field_count": 30,
+          "anomaly": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "review": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "error": null,
+          "tools": [
+            {
+              "order": 1,
+              "tool": "extract_document_fields",
+              "status": "ok",
+              "ms": 0.8,
+              "summary": "3 documents, 3 item rows"
+            },
+            {
+              "order": 2,
+              "tool": "normalize_trade_data",
+              "status": "ok",
+              "ms": 0.06,
+              "summary": "14 distinct field values normalized"
+            },
+            {
+              "order": 3,
+              "tool": "audit_document_consistency",
+              "status": "ok",
+              "ms": 0.09,
+              "summary": "8 comparisons, {'difference': 0, 'contradiction': 0, 'review': 0}"
+            },
+            {
+              "order": 4,
+              "tool": "export_audit_report",
+              "status": "ok",
+              "ms": 15.82,
+              "summary": "XLSX generated (9206 bytes)"
+            }
+          ],
+          "confirmations": [],
+          "compared_before": 8,
+          "compared_after": 8
+        }
+      ]
+    },
+    "model": [
+      {
+        "case": "01-new-invoice-csv",
+        "kind": "CI",
+        "expected": {
+          "4": "sku",
+          "6": "quantity",
+          "8": "unit_price",
+          "11": "line_amount"
+        },
+        "proposed": {
+          "4": "sku",
+          "6": "quantity",
+          "8": "unit_price",
+          "11": "line_amount"
+        },
+        "error": null,
+        "correct": 4,
+        "elapsed_ms": 795.144
+      },
+      {
+        "case": "02-new-invoice-xlsx",
+        "kind": "CI",
+        "expected": {
+          "4": "sku",
+          "6": "quantity",
+          "8": "unit_price",
+          "11": "line_amount"
+        },
+        "proposed": {
+          "4": "sku",
+          "6": "quantity",
+          "8": "unit_price",
+          "11": "line_amount"
+        },
+        "error": null,
+        "correct": 4,
+        "elapsed_ms": 800.347
+      }
+    ]
+  },
+  "model": {
+    "provider": "deepseek",
+    "name": "deepseek-flash"
+  }
+}

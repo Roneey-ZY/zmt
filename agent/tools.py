@@ -5,7 +5,7 @@ from typing import Callable
 
 from core.audit_rules import audit
 from core.normalizer import CURRENCY_SCALE, normalize_documents, normalize_value
-from core.parser import ParseError, parse_document
+from core.parser import ParseError, TableAnchor, parse_document
 from core.reporter import describe, make_report
 from core.schemas import AuditResult, Document, FieldValue, Finding, Kind, Language, Source
 
@@ -13,6 +13,7 @@ MODES = {
     "rules": ("规则演示模式", "Rules demo"),
     "ai": ("AI 智能体模式", "AI agent"),
     "revision": ("预览修正 · 规则复审", "Preview revision · Rules"),
+    "mapping": ("表头确认 · 规则复审", "Confirmed columns · Rules"),
 }
 
 
@@ -120,6 +121,36 @@ def revise_preview(run: ReviewRun, kind: Kind, line: int | None,
     if not changed:
         return None
     revision = ReviewRun(run.files, run.language, "revision", documents=documents)
+    run_rules(revision)
+    return revision
+
+
+def confirm_table_mapping(run: ReviewRun, kind: Kind, anchor: TableAnchor,
+                          columns: dict[int, str]) -> ReviewRun:
+    if run.documents is None or run.result is None:
+        raise ValueError("请先运行首轮审核。")
+    document = next(doc for doc in run.documents if doc.kind == kind)
+    if any(value.edited for fields in (document.header, *(item.fields for item in document.items))
+           for value in fields.values()):
+        raise ValueError("该单证已有预览修改。请先从原文件重新审核，再确认表头。")
+    selected = next(file for file in run.files if file.kind == kind)
+    mappings = {
+        TableAnchor(table.header.row, table.header.sheet, table.header.page):
+            {column.column: column.field for column in table.columns}
+        for table in document.confirmed_tables
+        if (table.header.sheet, table.header.page) != (anchor.sheet, anchor.page)
+    }
+    mappings[anchor] = columns
+    revision = ReviewRun(run.files, run.language, "mapping")
+
+    def apply_confirmed_table(target):
+        mapped = parse_document(kind, selected.name, selected.data, mappings)
+        if not mapped.items:
+            raise ParseError("确认后未取得商品行。请重新核对表头及样例。")
+        target.documents = [mapped if doc.kind == kind else doc for doc in run.documents]
+        return f"{len(mapped.items)} item rows, {len(columns)} confirmed columns"
+
+    revision.execute(apply_confirmed_table)
     run_rules(revision)
     return revision
 

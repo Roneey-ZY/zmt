@@ -1,0 +1,52 @@
+{
+  "findings": [
+    [
+      "WEIGHT",
+      "review",
+      "RC-661"
+    ]
+  ],
+  "documents": {
+    "PO": [
+      {
+        "order_id": "QA-661",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "RC-661",
+        "product": "Demo lamp",
+        "quantity": "8",
+        "unit": "PCS",
+        "unit_price": "6",
+        "currency": "USD"
+      }
+    ],
+    "CI": [
+      {
+        "order_id": "QA-661",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "RC-661",
+        "product": "Demo lamp",
+        "quantity": "8",
+        "unit": "PCS",
+        "invoice_id": "INV-QA-661",
+        "unit_price": "6",
+        "currency": "USD",
+        "line_amount": "48"
+      }
+    ],
+    "PL": [
+      {
+        "order_id": "QA-661",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "RC-661",
+        "product": "Demo lamp",
+        "quantity": "8",
+        "unit": "PCS",
+        "packages": "10",
+        "net_kg": "120"
+      }
+    ]
+  }
+}

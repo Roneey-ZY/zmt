@@ -50,3 +50,28 @@ python -m scripts.evaluate --mode both --output data/evaluation.json
 两种模式共享解析器和审核规则。本次对照反映模型调度的完成情况和开销，陌生模板的读取表现需另行评估。DeepSeek 接入后的本地回归测试通过 19 项。
 
 [10 组对照原始记录](data/evaluation-deepseek.json) · [案例 B 运行日志](data/demo-B-deepseek.json) · [案例 B Excel](data/demo-B-deepseek.xlsx) · [模拟失败回退](data/deepseek-fallback.json)
+
+## 陌生表头确认版
+
+同一份原始单证分别进行常规审核和确认表头后复审。输入、标准答案和测试脚本保存在项目中。评估程序使用预先记录的正确字段对应关系模拟用户确认。真实 DeepSeek 建议单独比较，其结果未写入标准答案。
+
+| 合成样本 | 完整通过 | 预设异常检出 | 复审误报 |
+|---|---:|---:|---:|
+| 原 5 组独立盲测复测 | 3/5 → 5/5 | 1/5 → 5/5 | 0 |
+| 新造 5 组布局 | 1/5 → 5/5 | 0/5 → 5/5 | 0 |
+
+- 新布局覆盖陌生英文 CSV 表头、中文 XLSX 表头、双页无边框文本 PDF、真实重量缺失和应忽略的可选列。两份缺失重量样本复审后都保留待复核。
+- 真实 DeepSeek 对三张合成发票给出 12 个陌生字段建议，12 个均与预设答案一致。该结果是三张样本上的建议准确性，业务结论由用户确认后的规则复审产生。
+- 常规 60 组基准复跑全部通过，预设异常 42/42，零误报。新版自动化测试共 28 项。
+- 本机 Edge 实跑案例 D 的模型授权、建议、确认、复审与 Excel 下载，并单独跑通案例 E 的无边框 PDF 确认。案例 D 的 [实机下载报告](data/case-D-confirmed-report.xlsx) 保留第 6 列的表头确认记录。
+- 此次未测真实企业模板的总体表现及人工确认耗时。
+
+```powershell
+python -m scripts.generate_template_validation
+python -m scripts.evaluate_template_mapping
+python -m scripts.evaluate_template_mapping --live-ai
+python -m scripts.evaluate --mode rules --output data/evaluation-v2.json
+python -m pytest -q
+```
+
+[表头确认逐组结果](data/template-evaluation.json) · [60 组新版回归结果](data/evaluation-v2.json) · [新版自动化测试记录](data/test-results-v2.xml)

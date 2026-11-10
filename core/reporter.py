@@ -103,6 +103,16 @@ def make_report(documents: list[Document], result: AuditResult, lang: Language, 
                 extracted.append([doc.kind, field if en else FIELD_NAMES[field], item.raw,
                                   item.source.display(lang), item.edited])
 
+    if any(doc.confirmed_tables for doc in documents):
+        mapping = wb.create_sheet("Confirmed columns" if en else "表头确认记录")
+        mapping.append(["Type", "Header source", "Column", "Original header", "Mapped field"] if en
+                       else ["单证", "表头出处", "原列号", "原始表头", "确认字段"])
+        for doc in documents:
+            for table in doc.confirmed_tables:
+                for column in table.columns:
+                    mapping.append([doc.kind, table.header.display(lang), column.column, column.label,
+                                    column.field if en else FIELD_NAMES[column.field]])
+
     for sheet in wb:
         sheet.freeze_panes = "A2"
         sheet.auto_filter.ref = sheet.dimensions

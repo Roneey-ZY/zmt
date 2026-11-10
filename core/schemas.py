@@ -17,6 +17,7 @@ class Source(BaseModel):
     page: int | None = None
     sheet: str | None = None
     row: int | None = None
+    column: int | None = None
 
     def display(self, lang: Language = "zh") -> str:
         suffix = []
@@ -26,7 +27,20 @@ class Source(BaseModel):
             suffix.append(self.sheet)
         if self.row is not None:
             suffix.append(f"第 {self.row} 行" if lang == "zh" else f"row {self.row}")
+        if self.column is not None:
+            suffix.append(f"第 {self.column} 列" if lang == "zh" else f"column {self.column}")
         return " · ".join([self.file, *suffix])
+
+
+class ColumnMapping(BaseModel):
+    column: int
+    label: str
+    field: str
+
+
+class ConfirmedTable(BaseModel):
+    header: Source
+    columns: list[ColumnMapping]
 
 
 class FieldValue(BaseModel):
@@ -47,6 +61,7 @@ class Document(BaseModel):
     items: list[Item] = Field(default_factory=list)
     conflicts: dict[str, list[FieldValue]] = Field(default_factory=dict)
     warnings: list[str] = Field(default_factory=list)
+    confirmed_tables: list[ConfirmedTable] = Field(default_factory=list)
 
 
 class Evidence(BaseModel):

@@ -1,0 +1,3783 @@
+{
+  "rules": {
+    "summary": {
+      "cases": 60,
+      "end_to_end_success_rate": 1.0,
+      "field_accuracy": 1.0,
+      "mean_ms": 18.228,
+      "median_ms": 16.96,
+      "anomaly": {
+        "tp": 42,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "review": {
+        "tp": 18,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    },
+    "records": [
+      {
+        "case": "001",
+        "elapsed_ms": 27.253,
+        "success": true,
+        "expected_findings": [],
+        "actual_findings": [],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 10.44,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.45,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.12,
+            "summary": "8 comparisons, {'difference': 0, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 16.23,
+            "summary": "XLSX generated (9237 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "002",
+        "elapsed_ms": 14.928,
+        "success": true,
+        "expected_findings": [
+          [
+            "PO_CI_QTY",
+            "difference",
+            "T-101"
+          ],
+          [
+            "CI_PL_QTY",
+            "difference",
+            "T-101"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "PO_CI_QTY",
+            "difference",
+            "T-101"
+          ],
+          [
+            "CI_PL_QTY",
+            "difference",
+            "T-101"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 0.69,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.06,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.09,
+            "summary": "8 comparisons, {'difference': 2, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 14.08,
+            "summary": "XLSX generated (9696 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "003",
+        "elapsed_ms": 16.577,
+        "success": true,
+        "expected_findings": [
+          [
+            "UNIT_PRICE",
+            "difference",
+            "T-102"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "UNIT_PRICE",
+            "difference",
+            "T-102"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 2.67,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.06,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.09,
+            "summary": "8 comparisons, {'difference': 1, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.76,
+            "summary": "XLSX generated (9555 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "004",
+        "elapsed_ms": 34.732,
+        "success": true,
+        "expected_findings": [
+          [
+            "LINE_AMOUNT",
+            "contradiction",
+            "T-103"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "LINE_AMOUNT",
+            "contradiction",
+            "T-103"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 6.86,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.09,
+            "summary": "8 comparisons, {'difference': 0, 'contradiction': 1, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 27.72,
+            "summary": "XLSX generated (9691 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "005",
+        "elapsed_ms": 16.556,
+        "success": true,
+        "expected_findings": [
+          [
+            "WEIGHT",
+            "contradiction",
+            "T-104"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "WEIGHT",
+            "contradiction",
+            "T-104"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 2.7,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.09,
+            "summary": "8 comparisons, {'difference': 0, 'contradiction': 1, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.71,
+            "summary": "XLSX generated (9561 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "006",
+        "elapsed_ms": 14.457,
+        "success": true,
+        "expected_findings": [
+          [
+            "WEIGHT",
+            "review",
+            "T-105"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "WEIGHT",
+            "review",
+            "T-105"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 29,
+        "field_count": 29,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 0.67,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.04,
+            "summary": "13 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "7 comparisons, {'difference': 0, 'contradiction': 0, 'review': 1}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.65,
+            "summary": "XLSX generated (9564 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "007",
+        "elapsed_ms": 22.019,
+        "success": true,
+        "expected_findings": [
+          [
+            "CURRENCY",
+            "difference",
+            ""
+          ],
+          [
+            "UNIT_PRICE",
+            "review",
+            "T-106"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "CURRENCY",
+            "difference",
+            ""
+          ],
+          [
+            "UNIT_PRICE",
+            "review",
+            "T-106"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 6.38,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.06,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.09,
+            "summary": "7 comparisons, {'difference': 1, 'contradiction': 0, 'review': 1}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 15.48,
+            "summary": "XLSX generated (9868 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "008",
+        "elapsed_ms": 14.081,
+        "success": true,
+        "expected_findings": [
+          [
+            "ORDER_LINK",
+            "difference",
+            ""
+          ]
+        ],
+        "actual_findings": [
+          [
+            "ORDER_LINK",
+            "difference",
+            ""
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 0.78,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.07,
+            "summary": "7 comparisons, {'difference': 1, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.17,
+            "summary": "XLSX generated (9548 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "009",
+        "elapsed_ms": 16.485,
+        "success": true,
+        "expected_findings": [
+          [
+            "SKU_DUPLICATE",
+            "review",
+            "T-108"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "SKU_DUPLICATE",
+            "review",
+            "T-108"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 35,
+        "field_count": 35,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 2.56,
+            "summary": "3 documents, 4 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.07,
+            "summary": "6 comparisons, {'difference': 0, 'contradiction': 0, 'review': 1}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.79,
+            "summary": "XLSX generated (9716 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "010",
+        "elapsed_ms": 20.932,
+        "success": true,
+        "expected_findings": [],
+        "actual_findings": [],
+        "field_differences": [],
+        "field_correct": 48,
+        "field_count": 48,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 5.35,
+            "summary": "3 documents, 6 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.31,
+            "summary": "21 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.11,
+            "summary": "13 comparisons, {'difference': 0, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 15.15,
+            "summary": "XLSX generated (9663 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "011",
+        "elapsed_ms": 16.701,
+        "success": true,
+        "expected_findings": [],
+        "actual_findings": [],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 2.59,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.06,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.07,
+            "summary": "8 comparisons, {'difference': 0, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.97,
+            "summary": "XLSX generated (9220 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "012",
+        "elapsed_ms": 15.599,
+        "success": true,
+        "expected_findings": [
+          [
+            "PO_CI_QTY",
+            "difference",
+            "T-111"
+          ],
+          [
+            "CI_PL_QTY",
+            "difference",
+            "T-111"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "PO_CI_QTY",
+            "difference",
+            "T-111"
+          ],
+          [
+            "CI_PL_QTY",
+            "difference",
+            "T-111"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 0.74,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.1,
+            "summary": "8 comparisons, {'difference': 2, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 14.7,
+            "summary": "XLSX generated (9696 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "013",
+        "elapsed_ms": 20.218,
+        "success": true,
+        "expected_findings": [
+          [
+            "UNIT_PRICE",
+            "difference",
+            "T-112"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "UNIT_PRICE",
+            "difference",
+            "T-112"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 6.49,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.06,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.09,
+            "summary": "8 comparisons, {'difference': 1, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.57,
+            "summary": "XLSX generated (9571 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "014",
+        "elapsed_ms": 14.478,
+        "success": true,
+        "expected_findings": [
+          [
+            "LINE_AMOUNT",
+            "contradiction",
+            "T-113"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "LINE_AMOUNT",
+            "contradiction",
+            "T-113"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 0.74,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "8 comparisons, {'difference': 0, 'contradiction': 1, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.6,
+            "summary": "XLSX generated (9676 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "015",
+        "elapsed_ms": 16.092,
+        "success": true,
+        "expected_findings": [
+          [
+            "WEIGHT",
+            "contradiction",
+            "T-114"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "WEIGHT",
+            "contradiction",
+            "T-114"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 2.46,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.06,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "8 comparisons, {'difference': 0, 'contradiction': 1, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.48,
+            "summary": "XLSX generated (9560 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "016",
+        "elapsed_ms": 19.178,
+        "success": true,
+        "expected_findings": [
+          [
+            "WEIGHT",
+            "review",
+            "T-115"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "WEIGHT",
+            "review",
+            "T-115"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 29,
+        "field_count": 29,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 5.5,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.04,
+            "summary": "13 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "7 comparisons, {'difference': 0, 'contradiction': 0, 'review': 1}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.55,
+            "summary": "XLSX generated (9578 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "017",
+        "elapsed_ms": 16.996,
+        "success": true,
+        "expected_findings": [
+          [
+            "CURRENCY",
+            "difference",
+            ""
+          ],
+          [
+            "UNIT_PRICE",
+            "review",
+            "T-116"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "CURRENCY",
+            "difference",
+            ""
+          ],
+          [
+            "UNIT_PRICE",
+            "review",
+            "T-116"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 2.37,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.06,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "7 comparisons, {'difference': 1, 'contradiction': 0, 'review': 1}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 14.48,
+            "summary": "XLSX generated (9851 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "018",
+        "elapsed_ms": 15.654,
+        "success": true,
+        "expected_findings": [
+          [
+            "ORDER_LINK",
+            "difference",
+            ""
+          ]
+        ],
+        "actual_findings": [
+          [
+            "ORDER_LINK",
+            "difference",
+            ""
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 0.87,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.06,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.09,
+            "summary": "7 comparisons, {'difference': 1, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 14.63,
+            "summary": "XLSX generated (9546 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "019",
+        "elapsed_ms": 20.931,
+        "success": true,
+        "expected_findings": [
+          [
+            "SKU_DUPLICATE",
+            "review",
+            "T-118"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "SKU_DUPLICATE",
+            "review",
+            "T-118"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 35,
+        "field_count": 35,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 6.72,
+            "summary": "3 documents, 4 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.06,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.09,
+            "summary": "6 comparisons, {'difference': 0, 'contradiction': 0, 'review': 1}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 14.06,
+            "summary": "XLSX generated (9732 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "020",
+        "elapsed_ms": 16.697,
+        "success": true,
+        "expected_findings": [],
+        "actual_findings": [],
+        "field_differences": [],
+        "field_correct": 48,
+        "field_count": 48,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 0.8,
+            "summary": "3 documents, 6 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.07,
+            "summary": "21 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.1,
+            "summary": "13 comparisons, {'difference': 0, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 15.71,
+            "summary": "XLSX generated (9647 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "021",
+        "elapsed_ms": 15.619,
+        "success": true,
+        "expected_findings": [],
+        "actual_findings": [],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 2.46,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.07,
+            "summary": "8 comparisons, {'difference': 0, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.03,
+            "summary": "XLSX generated (9221 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "022",
+        "elapsed_ms": 19.469,
+        "success": true,
+        "expected_findings": [
+          [
+            "PO_CI_QTY",
+            "difference",
+            "T-121"
+          ],
+          [
+            "CI_PL_QTY",
+            "difference",
+            "T-121"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "PO_CI_QTY",
+            "difference",
+            "T-121"
+          ],
+          [
+            "CI_PL_QTY",
+            "difference",
+            "T-121"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 4.56,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "8 comparisons, {'difference': 2, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 14.78,
+            "summary": "XLSX generated (9723 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "023",
+        "elapsed_ms": 17.359,
+        "success": true,
+        "expected_findings": [
+          [
+            "UNIT_PRICE",
+            "difference",
+            "T-122"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "UNIT_PRICE",
+            "difference",
+            "T-122"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 2.7,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.07,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.1,
+            "summary": "8 comparisons, {'difference': 1, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 14.48,
+            "summary": "XLSX generated (9554 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "024",
+        "elapsed_ms": 15.0,
+        "success": true,
+        "expected_findings": [
+          [
+            "LINE_AMOUNT",
+            "contradiction",
+            "T-123"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "LINE_AMOUNT",
+            "contradiction",
+            "T-123"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 0.83,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.07,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.1,
+            "summary": "8 comparisons, {'difference': 0, 'contradiction': 1, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.99,
+            "summary": "XLSX generated (9679 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "025",
+        "elapsed_ms": 21.531,
+        "success": true,
+        "expected_findings": [
+          [
+            "WEIGHT",
+            "contradiction",
+            "T-124"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "WEIGHT",
+            "contradiction",
+            "T-124"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 7.38,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.06,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "8 comparisons, {'difference': 0, 'contradiction': 1, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 14.0,
+            "summary": "XLSX generated (9576 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "026",
+        "elapsed_ms": 15.025,
+        "success": true,
+        "expected_findings": [
+          [
+            "WEIGHT",
+            "review",
+            "T-125"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "WEIGHT",
+            "review",
+            "T-125"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 29,
+        "field_count": 29,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 0.7,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "13 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "7 comparisons, {'difference': 0, 'contradiction': 0, 'review': 1}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 14.19,
+            "summary": "XLSX generated (9563 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "027",
+        "elapsed_ms": 16.924,
+        "success": true,
+        "expected_findings": [
+          [
+            "CURRENCY",
+            "difference",
+            ""
+          ],
+          [
+            "UNIT_PRICE",
+            "review",
+            "T-126"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "CURRENCY",
+            "difference",
+            ""
+          ],
+          [
+            "UNIT_PRICE",
+            "review",
+            "T-126"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 2.54,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.06,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.1,
+            "summary": "7 comparisons, {'difference': 1, 'contradiction': 0, 'review': 1}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 14.22,
+            "summary": "XLSX generated (9853 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "028",
+        "elapsed_ms": 18.49,
+        "success": true,
+        "expected_findings": [
+          [
+            "ORDER_LINK",
+            "difference",
+            ""
+          ]
+        ],
+        "actual_findings": [
+          [
+            "ORDER_LINK",
+            "difference",
+            ""
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 4.81,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "7 comparisons, {'difference': 1, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.55,
+            "summary": "XLSX generated (9572 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "029",
+        "elapsed_ms": 18.277,
+        "success": true,
+        "expected_findings": [
+          [
+            "SKU_DUPLICATE",
+            "review",
+            "T-128"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "SKU_DUPLICATE",
+            "review",
+            "T-128"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 35,
+        "field_count": 35,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 2.56,
+            "summary": "3 documents, 4 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "6 comparisons, {'difference': 0, 'contradiction': 0, 'review': 1}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 15.57,
+            "summary": "XLSX generated (9715 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "030",
+        "elapsed_ms": 19.643,
+        "success": true,
+        "expected_findings": [],
+        "actual_findings": [],
+        "field_differences": [],
+        "field_correct": 48,
+        "field_count": 48,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 2.53,
+            "summary": "3 documents, 6 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.1,
+            "summary": "21 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.17,
+            "summary": "13 comparisons, {'difference': 0, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 16.83,
+            "summary": "XLSX generated (9649 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "031",
+        "elapsed_ms": 20.787,
+        "success": true,
+        "expected_findings": [],
+        "actual_findings": [],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 6.99,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.06,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "8 comparisons, {'difference': 0, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.64,
+            "summary": "XLSX generated (9239 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "032",
+        "elapsed_ms": 15.305,
+        "success": true,
+        "expected_findings": [
+          [
+            "PO_CI_QTY",
+            "difference",
+            "T-131"
+          ],
+          [
+            "CI_PL_QTY",
+            "difference",
+            "T-131"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "PO_CI_QTY",
+            "difference",
+            "T-131"
+          ],
+          [
+            "CI_PL_QTY",
+            "difference",
+            "T-131"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 0.79,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.06,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.09,
+            "summary": "8 comparisons, {'difference': 2, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 14.35,
+            "summary": "XLSX generated (9697 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "033",
+        "elapsed_ms": 20.516,
+        "success": true,
+        "expected_findings": [
+          [
+            "UNIT_PRICE",
+            "difference",
+            "T-132"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "UNIT_PRICE",
+            "difference",
+            "T-132"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 2.41,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.06,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "8 comparisons, {'difference': 1, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 17.96,
+            "summary": "XLSX generated (9555 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "034",
+        "elapsed_ms": 19.084,
+        "success": true,
+        "expected_findings": [
+          [
+            "LINE_AMOUNT",
+            "contradiction",
+            "T-133"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "LINE_AMOUNT",
+            "contradiction",
+            "T-133"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 5.26,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.09,
+            "summary": "8 comparisons, {'difference': 0, 'contradiction': 1, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.68,
+            "summary": "XLSX generated (9691 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "035",
+        "elapsed_ms": 16.073,
+        "success": true,
+        "expected_findings": [
+          [
+            "WEIGHT",
+            "contradiction",
+            "T-134"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "WEIGHT",
+            "contradiction",
+            "T-134"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 2.44,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.06,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "8 comparisons, {'difference': 0, 'contradiction': 1, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.48,
+            "summary": "XLSX generated (9561 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "036",
+        "elapsed_ms": 14.533,
+        "success": true,
+        "expected_findings": [
+          [
+            "WEIGHT",
+            "review",
+            "T-135"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "WEIGHT",
+            "review",
+            "T-135"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 29,
+        "field_count": 29,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 0.71,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "13 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "7 comparisons, {'difference': 0, 'contradiction': 0, 'review': 1}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.69,
+            "summary": "XLSX generated (9563 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "037",
+        "elapsed_ms": 21.813,
+        "success": true,
+        "expected_findings": [
+          [
+            "CURRENCY",
+            "difference",
+            ""
+          ],
+          [
+            "UNIT_PRICE",
+            "review",
+            "T-136"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "CURRENCY",
+            "difference",
+            ""
+          ],
+          [
+            "UNIT_PRICE",
+            "review",
+            "T-136"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 6.36,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.06,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.09,
+            "summary": "7 comparisons, {'difference': 1, 'contradiction': 0, 'review': 1}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 15.3,
+            "summary": "XLSX generated (9868 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "038",
+        "elapsed_ms": 14.119,
+        "success": true,
+        "expected_findings": [
+          [
+            "ORDER_LINK",
+            "difference",
+            ""
+          ]
+        ],
+        "actual_findings": [
+          [
+            "ORDER_LINK",
+            "difference",
+            ""
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 0.69,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.07,
+            "summary": "7 comparisons, {'difference': 1, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.31,
+            "summary": "XLSX generated (9546 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "039",
+        "elapsed_ms": 16.695,
+        "success": true,
+        "expected_findings": [
+          [
+            "SKU_DUPLICATE",
+            "review",
+            "T-138"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "SKU_DUPLICATE",
+            "review",
+            "T-138"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 35,
+        "field_count": 35,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 2.75,
+            "summary": "3 documents, 4 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.07,
+            "summary": "6 comparisons, {'difference': 0, 'contradiction': 0, 'review': 1}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.81,
+            "summary": "XLSX generated (9716 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "040",
+        "elapsed_ms": 20.704,
+        "success": true,
+        "expected_findings": [],
+        "actual_findings": [],
+        "field_differences": [],
+        "field_correct": 48,
+        "field_count": 48,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 5.36,
+            "summary": "3 documents, 6 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.07,
+            "summary": "21 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.1,
+            "summary": "13 comparisons, {'difference': 0, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 15.17,
+            "summary": "XLSX generated (9663 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "041",
+        "elapsed_ms": 15.857,
+        "success": true,
+        "expected_findings": [],
+        "actual_findings": [],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 2.58,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.06,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "8 comparisons, {'difference': 0, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.13,
+            "summary": "XLSX generated (9221 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "042",
+        "elapsed_ms": 15.768,
+        "success": true,
+        "expected_findings": [
+          [
+            "PO_CI_QTY",
+            "difference",
+            "T-141"
+          ],
+          [
+            "CI_PL_QTY",
+            "difference",
+            "T-141"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "PO_CI_QTY",
+            "difference",
+            "T-141"
+          ],
+          [
+            "CI_PL_QTY",
+            "difference",
+            "T-141"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 0.69,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "8 comparisons, {'difference': 2, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 14.94,
+            "summary": "XLSX generated (9695 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "043",
+        "elapsed_ms": 19.82,
+        "success": true,
+        "expected_findings": [
+          [
+            "UNIT_PRICE",
+            "difference",
+            "T-142"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "UNIT_PRICE",
+            "difference",
+            "T-142"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 6.26,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "8 comparisons, {'difference': 1, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.42,
+            "summary": "XLSX generated (9571 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "044",
+        "elapsed_ms": 14.362,
+        "success": true,
+        "expected_findings": [
+          [
+            "LINE_AMOUNT",
+            "contradiction",
+            "T-143"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "LINE_AMOUNT",
+            "contradiction",
+            "T-143"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 0.69,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.07,
+            "summary": "8 comparisons, {'difference': 0, 'contradiction': 1, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.55,
+            "summary": "XLSX generated (9675 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "045",
+        "elapsed_ms": 16.138,
+        "success": true,
+        "expected_findings": [
+          [
+            "WEIGHT",
+            "contradiction",
+            "T-144"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "WEIGHT",
+            "contradiction",
+            "T-144"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 2.34,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "8 comparisons, {'difference': 0, 'contradiction': 1, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.65,
+            "summary": "XLSX generated (9562 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "046",
+        "elapsed_ms": 19.994,
+        "success": true,
+        "expected_findings": [
+          [
+            "WEIGHT",
+            "review",
+            "T-145"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "WEIGHT",
+            "review",
+            "T-145"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 29,
+        "field_count": 29,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 5.36,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "13 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "7 comparisons, {'difference': 0, 'contradiction': 0, 'review': 1}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 14.49,
+            "summary": "XLSX generated (9578 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "047",
+        "elapsed_ms": 16.878,
+        "success": true,
+        "expected_findings": [
+          [
+            "CURRENCY",
+            "difference",
+            ""
+          ],
+          [
+            "UNIT_PRICE",
+            "review",
+            "T-146"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "CURRENCY",
+            "difference",
+            ""
+          ],
+          [
+            "UNIT_PRICE",
+            "review",
+            "T-146"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 2.56,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.06,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.09,
+            "summary": "7 comparisons, {'difference': 1, 'contradiction': 0, 'review': 1}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 14.17,
+            "summary": "XLSX generated (9851 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "048",
+        "elapsed_ms": 14.245,
+        "success": true,
+        "expected_findings": [
+          [
+            "ORDER_LINK",
+            "difference",
+            ""
+          ]
+        ],
+        "actual_findings": [
+          [
+            "ORDER_LINK",
+            "difference",
+            ""
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 0.7,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.07,
+            "summary": "7 comparisons, {'difference': 1, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.42,
+            "summary": "XLSX generated (9547 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "049",
+        "elapsed_ms": 20.609,
+        "success": true,
+        "expected_findings": [
+          [
+            "SKU_DUPLICATE",
+            "review",
+            "T-148"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "SKU_DUPLICATE",
+            "review",
+            "T-148"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 35,
+        "field_count": 35,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 6.65,
+            "summary": "3 documents, 4 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "6 comparisons, {'difference': 0, 'contradiction': 0, 'review': 1}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.82,
+            "summary": "XLSX generated (9732 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "050",
+        "elapsed_ms": 16.745,
+        "success": true,
+        "expected_findings": [],
+        "actual_findings": [],
+        "field_differences": [],
+        "field_correct": 48,
+        "field_count": 48,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 0.92,
+            "summary": "3 documents, 6 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.07,
+            "summary": "21 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.09,
+            "summary": "13 comparisons, {'difference': 0, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 15.66,
+            "summary": "XLSX generated (9649 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "051",
+        "elapsed_ms": 32.476,
+        "success": true,
+        "expected_findings": [],
+        "actual_findings": [],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 2.36,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.07,
+            "summary": "8 comparisons, {'difference': 0, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 29.98,
+            "summary": "XLSX generated (9221 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "052",
+        "elapsed_ms": 18.769,
+        "success": true,
+        "expected_findings": [
+          [
+            "PO_CI_QTY",
+            "difference",
+            "T-151"
+          ],
+          [
+            "CI_PL_QTY",
+            "difference",
+            "T-151"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "PO_CI_QTY",
+            "difference",
+            "T-151"
+          ],
+          [
+            "CI_PL_QTY",
+            "difference",
+            "T-151"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 4.66,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.1,
+            "summary": "8 comparisons, {'difference': 2, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.96,
+            "summary": "XLSX generated (9723 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "053",
+        "elapsed_ms": 17.684,
+        "success": true,
+        "expected_findings": [
+          [
+            "UNIT_PRICE",
+            "difference",
+            "T-152"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "UNIT_PRICE",
+            "difference",
+            "T-152"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 2.38,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.06,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "8 comparisons, {'difference': 1, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 15.16,
+            "summary": "XLSX generated (9555 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "054",
+        "elapsed_ms": 18.554,
+        "success": true,
+        "expected_findings": [
+          [
+            "LINE_AMOUNT",
+            "contradiction",
+            "T-153"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "LINE_AMOUNT",
+            "contradiction",
+            "T-153"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 1.11,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.09,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.15,
+            "summary": "8 comparisons, {'difference': 0, 'contradiction': 1, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 17.18,
+            "summary": "XLSX generated (9674 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "055",
+        "elapsed_ms": 21.563,
+        "success": true,
+        "expected_findings": [
+          [
+            "WEIGHT",
+            "contradiction",
+            "T-154"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "WEIGHT",
+            "contradiction",
+            "T-154"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 7.04,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.06,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.09,
+            "summary": "8 comparisons, {'difference': 0, 'contradiction': 1, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 14.37,
+            "summary": "XLSX generated (9576 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "056",
+        "elapsed_ms": 14.296,
+        "success": true,
+        "expected_findings": [
+          [
+            "WEIGHT",
+            "review",
+            "T-155"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "WEIGHT",
+            "review",
+            "T-155"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 29,
+        "field_count": 29,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 0.72,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "13 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "7 comparisons, {'difference': 0, 'contradiction': 0, 'review': 1}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 13.44,
+            "summary": "XLSX generated (9563 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "057",
+        "elapsed_ms": 18.796,
+        "success": true,
+        "expected_findings": [
+          [
+            "CURRENCY",
+            "difference",
+            ""
+          ],
+          [
+            "UNIT_PRICE",
+            "review",
+            "T-156"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "CURRENCY",
+            "difference",
+            ""
+          ],
+          [
+            "UNIT_PRICE",
+            "review",
+            "T-156"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 2.32,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.06,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "7 comparisons, {'difference': 1, 'contradiction': 0, 'review': 1}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 16.33,
+            "summary": "XLSX generated (9851 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "058",
+        "elapsed_ms": 20.434,
+        "success": true,
+        "expected_findings": [
+          [
+            "ORDER_LINK",
+            "difference",
+            ""
+          ]
+        ],
+        "actual_findings": [
+          [
+            "ORDER_LINK",
+            "difference",
+            ""
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 30,
+        "field_count": 30,
+        "anomaly": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 5.26,
+            "summary": "3 documents, 3 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.05,
+            "summary": "15 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.08,
+            "summary": "7 comparisons, {'difference': 1, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 15.03,
+            "summary": "XLSX generated (9572 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "059",
+        "elapsed_ms": 17.343,
+        "success": true,
+        "expected_findings": [
+          [
+            "SKU_DUPLICATE",
+            "review",
+            "T-158"
+          ]
+        ],
+        "actual_findings": [
+          [
+            "SKU_DUPLICATE",
+            "review",
+            "T-158"
+          ]
+        ],
+        "field_differences": [],
+        "field_correct": 35,
+        "field_count": 35,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 2.87,
+            "summary": "3 documents, 4 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.07,
+            "summary": "14 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.1,
+            "summary": "6 comparisons, {'difference': 0, 'contradiction': 0, 'review': 1}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 14.29,
+            "summary": "XLSX generated (9716 bytes)"
+          }
+        ]
+      },
+      {
+        "case": "060",
+        "elapsed_ms": 15.806,
+        "success": true,
+        "expected_findings": [],
+        "actual_findings": [],
+        "field_differences": [],
+        "field_correct": 48,
+        "field_count": 48,
+        "anomaly": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "review": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "error": null,
+        "tools": [
+          {
+            "order": 1,
+            "tool": "extract_document_fields",
+            "status": "ok",
+            "ms": 0.77,
+            "summary": "3 documents, 6 item rows"
+          },
+          {
+            "order": 2,
+            "tool": "normalize_trade_data",
+            "status": "ok",
+            "ms": 0.07,
+            "summary": "21 distinct field values normalized"
+          },
+          {
+            "order": 3,
+            "tool": "audit_document_consistency",
+            "status": "ok",
+            "ms": 0.09,
+            "summary": "13 comparisons, {'difference': 0, 'contradiction': 0, 'review': 0}"
+          },
+          {
+            "order": 4,
+            "tool": "export_audit_report",
+            "status": "ok",
+            "ms": 14.87,
+            "summary": "XLSX generated (9649 bytes)"
+          }
+        ]
+      }
+    ]
+  }
+}

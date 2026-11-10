@@ -11,6 +11,7 @@ from core.demo import DATA, load_case
 from core.parser import ParseError
 from core.reporter import CATEGORIES, FIELD_NAMES, SEVERITY, SCOPE, describe, make_report
 from core.schemas import HEADER_FIELDS, ITEM_FIELDS
+from mapping_ui import mapping_panel
 
 st.set_page_config(page_title="贸审通 TradeCheck Agent", page_icon="📋", layout="wide")
 st.markdown("""
@@ -31,7 +32,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 TYPES = {"PO": "采购订单", "CI": "商业发票", "PL": "装箱单"}
-CASES = {"A": "A · 正常单证", "B": "B · 四项典型异常", "C": "C · 缺值、重复与关联失败"}
+CASES = {"A": "A · 正常单证", "B": "B · 四项典型异常", "C": "C · 缺值、重复与关联失败",
+         "D": "D · 陌生发票列名", "E": "E · 无边框装箱单"}
+TEMPLATE_CASES = {"D": "03-unfamiliar-invoice-columns", "E": "05-borderless-packing-list"}
 STATE = st.session_state
 
 
@@ -52,6 +55,7 @@ def launch(files, mode, lang, progress, focus):
     run = ReviewRun(files=files, language=lang, mode=mode, progress=progress)
     STATE.pop("baseline", None)
     STATE.pop("answer", None)
+    STATE.pop("mapping_scan", None)
     STATE["revision"] = STATE.get("revision", 0) + 1
     summary, error = None, None
     start = perf_counter()
@@ -111,8 +115,12 @@ input_mode = st.radio("单证来源", ["演示案例", "上传文件"], horizont
 files = []
 if input_mode == "演示案例":
     case = st.selectbox("选择演示案例", CASES, index=1, format_func=CASES.get)
-    files = load_case(DATA / "demo" / case)
+    case_path = (DATA / "template_validation" / "regression" / TEMPLATE_CASES[case]
+                 if case in TEMPLATE_CASES else DATA / "demo" / case)
+    files = load_case(case_path)
     st.caption("内置单证均为合成数据。加载后立即执行所选模式。")
+    if case in TEMPLATE_CASES:
+        st.caption("首轮审核后，打开「确认陌生表头或无边框 PDF」查看原始列和复审变化。")
     demo_button = st.container()
 else:
     for col, (kind, label) in zip(st.columns(3), TYPES.items()):
@@ -173,6 +181,21 @@ if record:
 
     if run.result is not None and error is None:
         st.header("03 / 核验结果")
+        if run.mode == "mapping" and "baseline" in STATE:
+            initial = STATE["baseline"]
+            st.success(f"确认后已执行核验 {initial.compared} → {run.result.compared} 项，"
+                       f"待复核 {initial.counts['review']} → {run.result.counts['review']} 项。")
+            original = Counter(fingerprint(f) for f in initial.findings)
+            added = Counter(fingerprint(f) for f in run.result.findings) - original
+            new_issues = [describe(f, "zh")[0] for f in run.result.findings
+                          if f.category != "review" and fingerprint(f) in added]
+            if new_issues:
+                st.text("复审新增发现　" + " / ".join(new_issues))
+        started = perf_counter()
+        mapped = mapping_panel(run, STATE["revision"], provider, key, model, TYPES)
+        if mapped is not None:
+            save_revision(run, mapped, started)
+            st.rerun()
         show_findings(run.result)
         if summary is not None:
             with st.expander("模型解读 · 对照上述规则证据"):
@@ -256,6 +279,6 @@ with st.expander("技术说明与审核范围"):
 - **审核链路**　文件解析 → 字段标准化 → 确定性规则 → Excel 证据报告。
 - **AI 智能体模式**　服务端的单一 Agent 使用 OpenAI Agents SDK 发起工具调用。页面记录实际执行事件。
 - **规则演示模式**　应用直接执行同一组 Python 工具。数量和金额规则在两种模式下采用相同口径。
-- **支持范围**　一次关联一笔采购订单。支持常见中英文字段别名、XLSX、CSV、带表格或分隔文本的 PDF。模糊字段和重复 SKU 进入人工复核。
+- **支持范围**　一次关联一笔采购订单。支持常见中英文字段别名、XLSX、CSV、带表格或分隔文本的 PDF。陌生表头和部分无边框文本 PDF 可在确认后复审。模糊字段和重复 SKU 进入人工复核。
 - **数据与边界**　预览数据存于当前会话。系统检查内容一致性。扫描件 OCR、汇率转换和海关法律合规判断超出审核范围。
     """)

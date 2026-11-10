@@ -1,0 +1,52 @@
+{
+  "documents": {
+    "PO": [
+      {
+        "order_id": "VAL-PO-03",
+        "sku": "VTX-401",
+        "product": "Rotor insert",
+        "quantity": "10",
+        "unit": "PCS",
+        "currency": "EUR",
+        "unit_price": "9.00"
+      }
+    ],
+    "CI": [
+      {
+        "order_id": "VAL-PO-03",
+        "sku": "VTX-401",
+        "product": "Rotor insert",
+        "quantity": "8",
+        "unit": "PCS",
+        "currency": "EUR",
+        "unit_price": "9.00",
+        "invoice_id": "VAL-CI-03",
+        "line_amount": "72.00"
+      }
+    ],
+    "PL": [
+      {
+        "order_id": "VAL-PO-03",
+        "sku": "VTX-401",
+        "product": "Rotor insert",
+        "quantity": "10",
+        "unit": "PCS",
+        "packages": "2",
+        "net_kg": "5",
+        "gross_kg": "6"
+      }
+    ]
+  },
+  "findings": [
+    [
+      "PO_CI_QTY",
+      "difference",
+      "VTX-401"
+    ],
+    [
+      "CI_PL_QTY",
+      "difference",
+      "VTX-401"
+    ]
+  ]
+}

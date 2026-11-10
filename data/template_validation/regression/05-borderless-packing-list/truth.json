@@ -1,0 +1,52 @@
+{
+  "documents": {
+    "PO": [
+      {
+        "order_id": "VAL-PO-05",
+        "sku": "BOX-803",
+        "product": "Nozzle holder",
+        "quantity": "12",
+        "unit": "PCS",
+        "currency": "EUR",
+        "unit_price": "4.00"
+      }
+    ],
+    "CI": [
+      {
+        "order_id": "VAL-PO-05",
+        "sku": "BOX-803",
+        "product": "Nozzle holder",
+        "quantity": "12",
+        "unit": "PCS",
+        "currency": "EUR",
+        "unit_price": "4.00",
+        "invoice_id": "VAL-CI-05",
+        "line_amount": "48.00"
+      }
+    ],
+    "PL": [
+      {
+        "order_id": "VAL-PO-05",
+        "sku": "BOX-803",
+        "product": "Nozzle holder",
+        "quantity": "10",
+        "unit": "PCS",
+        "packages": "2",
+        "net_kg": "6",
+        "gross_kg": "5"
+      }
+    ]
+  },
+  "findings": [
+    [
+      "CI_PL_QTY",
+      "difference",
+      "BOX-803"
+    ],
+    [
+      "WEIGHT",
+      "contradiction",
+      "BOX-803"
+    ]
+  ]
+}

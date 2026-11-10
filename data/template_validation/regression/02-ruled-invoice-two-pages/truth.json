@@ -1,0 +1,77 @@
+{
+  "documents": {
+    "PO": [
+      {
+        "order_id": "VAL-PO-02",
+        "sku": "AE-123",
+        "product": "Aluminium bracket",
+        "quantity": "12",
+        "unit": "PCS",
+        "currency": "EUR",
+        "unit_price": "2.50"
+      },
+      {
+        "order_id": "VAL-PO-02",
+        "sku": "AE-111",
+        "product": "Silicone cap",
+        "quantity": "8",
+        "unit": "PCS",
+        "currency": "EUR",
+        "unit_price": "3.50"
+      }
+    ],
+    "CI": [
+      {
+        "order_id": "VAL-PO-02",
+        "sku": "AE-111",
+        "product": "Silicone cap",
+        "quantity": "8",
+        "unit": "PCS",
+        "currency": "EUR",
+        "unit_price": "3.50",
+        "invoice_id": "VAL-CI-02",
+        "line_amount": "28.00"
+      },
+      {
+        "order_id": "VAL-PO-02",
+        "sku": "AE-123",
+        "product": "Aluminium bracket",
+        "quantity": "12",
+        "unit": "PCS",
+        "currency": "EUR",
+        "unit_price": "2.50",
+        "invoice_id": "VAL-CI-02",
+        "line_amount": "31.00"
+      }
+    ],
+    "PL": [
+      {
+        "order_id": "VAL-PO-02",
+        "sku": "AE-123",
+        "product": "Aluminium bracket",
+        "quantity": "12",
+        "unit": "PCS",
+        "packages": "2",
+        "net_kg": "5",
+        "gross_kg": "6"
+      },
+      {
+        "order_id": "VAL-PO-02",
+        "sku": "AE-111",
+        "product": "Silicone cap",
+        "quantity": "8",
+        "unit": "PCS",
+        "packages": "2",
+        "net_kg": "5",
+        "gross_kg": "6"
+      }
+    ]
+  },
+  "findings": [
+    [
+      "LINE_AMOUNT",
+      "contradiction",
+      "AE-123"
+    ]
+  ]
+}

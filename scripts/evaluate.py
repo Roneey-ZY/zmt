@@ -45,6 +45,26 @@ def score(truth, actual):
                 fn=sum((truth - actual).values()))
 
 
+def score_run(case, truth, run, elapsed, error):
+    expected = expected_fields(truth)
+    actual = observed_fields(run.documents or [])
+    differences = [
+        {"field": field, "expected": expected.get(field), "actual": actual.get(field)}
+        for field in sorted(expected.keys() | actual.keys()) if expected.get(field) != actual.get(field)
+    ]
+    findings = [(f.rule, f.category, f.sku) for f in run.result.findings] if run.result else []
+    anomaly = score(split_findings(truth["findings"], False), split_findings(findings, False))
+    review = score(split_findings(truth["findings"], True), split_findings(findings, True))
+    success = error is None and bool(run.report) and not differences and not (
+        anomaly["fp"] or anomaly["fn"] or review["fp"] or review["fn"]
+    )
+    return dict(case=case, elapsed_ms=round(elapsed, 3), success=success,
+                expected_findings=truth["findings"], actual_findings=findings,
+                field_differences=differences, field_correct=len(expected.keys() | actual.keys()) - len(differences),
+                field_count=len(expected.keys() | actual.keys()),
+                anomaly=anomaly, review=review, error=error, tools=run.log)
+
+
 def evaluate(mode, folders, key="", *, provider="openai", model=DEFAULT_MODEL):
     records = []
     for folder in folders:
@@ -60,23 +80,7 @@ def evaluate(mode, folders, key="", *, provider="openai", model=DEFAULT_MODEL):
         except Exception as exc:
             error = str(exc)
         elapsed = (perf_counter() - started) * 1000
-        expected = expected_fields(truth)
-        actual = observed_fields(run.documents or [])
-        differences = [
-            {"field": field, "expected": expected.get(field), "actual": actual.get(field)}
-            for field in sorted(expected.keys() | actual.keys()) if expected.get(field) != actual.get(field)
-        ]
-        findings = [(f.rule, f.category, f.sku) for f in run.result.findings] if run.result else []
-        anomaly = score(split_findings(truth["findings"], False), split_findings(findings, False))
-        review = score(split_findings(truth["findings"], True), split_findings(findings, True))
-        success = error is None and bool(run.report) and not differences and not (
-            anomaly["fp"] or anomaly["fn"] or review["fp"] or review["fn"]
-        )
-        records.append(dict(case=folder.name, elapsed_ms=round(elapsed, 3), success=success,
-                            expected_findings=truth["findings"], actual_findings=findings,
-                            field_differences=differences, field_correct=len(expected.keys() | actual.keys()) - len(differences),
-                            field_count=len(expected.keys() | actual.keys()),
-                            anomaly=anomaly, review=review, error=error, tools=run.log))
+        records.append(score_run(folder.name, truth, run, elapsed, error))
     return records
 
 

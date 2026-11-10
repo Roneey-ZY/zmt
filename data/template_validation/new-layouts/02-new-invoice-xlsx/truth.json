@@ -1,0 +1,53 @@
+{
+  "findings": [
+    [
+      "UNIT_PRICE",
+      "difference",
+      "RC-841"
+    ]
+  ],
+  "documents": {
+    "PO": [
+      {
+        "order_id": "QA-841",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "RC-841",
+        "product": "Demo lamp",
+        "quantity": "16",
+        "unit": "PCS",
+        "unit_price": "4",
+        "currency": "USD"
+      }
+    ],
+    "CI": [
+      {
+        "order_id": "QA-841",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "RC-841",
+        "product": "Demo lamp",
+        "quantity": "16",
+        "unit": "PCS",
+        "invoice_id": "INV-QA-841",
+        "unit_price": "5",
+        "currency": "USD",
+        "line_amount": "80"
+      }
+    ],
+    "PL": [
+      {
+        "order_id": "QA-841",
+        "buyer": "Harbor Demo LLC",
+        "seller": "Pioneer Demo Co.",
+        "sku": "RC-841",
+        "product": "Demo lamp",
+        "quantity": "16",
+        "unit": "PCS",
+        "packages": "10",
+        "net_kg": "120",
+        "gross_kg": "130"
+      }
+    ]
+  }
+}
