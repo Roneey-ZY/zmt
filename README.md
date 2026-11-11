@@ -12,7 +12,9 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m streamlit run app.py --server.address 127.0.0.1
 ```
 
-打开 `http://127.0.0.1:8501`，选择案例并点击 **一键加载演示案例**。未配置 API Key 时可直接运行规则演示。
+先运行 `python scripts/create_login_secret.py`，将输出的三项登录配置放在本地 `.streamlit/secrets.toml` 顶层；云端配置方式见 [登录部署说明](LOGIN_DEPLOYMENT.md)。登录保护默认开启，缺少配置时不会放行工作台。
+
+打开 `http://127.0.0.1:8501` 并登录，选择案例并点击 **一键加载演示案例**。未配置模型 API Key 时可运行规则演示。
 
 启用 AI 模式时，在服务端环境变量或本地 `.streamlit/secrets.toml` 的顶层配置 `DEEPSEEK_API_KEY`，默认使用 `deepseek-flash`。可通过 `DEEPSEEK_MODEL` 覆盖模型。只配置 `OPENAI_API_KEY` 时使用 OpenAI，可通过 `TRADECHECK_MODEL` 选择模型。两种密钥都存在时优先 DeepSeek。环境变量示例见 [.env.example](.env.example)。 [DeepSeek Responses API](https://api-docs.deepseek.com/guides/responses_api/)
 

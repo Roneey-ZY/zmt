@@ -75,3 +75,8 @@ python -m pytest -q
 ```
 
 [表头确认逐组结果](data/template-evaluation.json) · [60 组新版回归结果](data/evaluation-v2.json) · [新版自动化测试记录](data/test-results-v2.xml)
+
+
+## 登录保护回归（2026-11-11）
+
+实测完整 pytest：32 项全部通过，耗时 9.78 秒。记录见 `data/test-results-login.xml`。新增 4 项测试覆盖哈希与配置校验、会话过期/轮换、跨会话共享的进程内限速、配置缺失时拦截，以及 Streamlit AppTest 实际页面登录失败/成功、案例 B 四项异常及报告生成、退出清理。此测试未进行新的模型实网调用，云平台登录配置与公网验收尚未完成。

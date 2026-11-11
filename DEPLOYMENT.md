@@ -1,5 +1,9 @@
 # 部署与公开验收
 
+## 登录配置（发布前必读）
+
+当前版本默认需要账号密码登录。发布前按 [登录部署说明](LOGIN_DEPLOYMENT.md) 配置 `LOGIN_USERNAME`、`LOGIN_SALT`、`LOGIN_PASSWORD_HASH`；与原有模型密钥一并保存在服务端。未配置时页面会阻止进入工作台。比赛提交材料需提供体验账号密码。
+
 ## 更新已有站点
 
 已有 `Roneey-ZY/zmt` 仓库的情况下，登录 GitHub 后将新版源码包中 `tradecheck-agent/` 的内容更新至仓库根目录。保留现有 `.git` 和 Streamlit Secrets。应用重新部署后，在公开链接中确认演示选择器出现案例 D 和 E。先用案例 E 验证无需模型的复审，再用案例 D 验证模型建议及 Excel 下载。改动已在本机验证，公开站点需部署后验收。

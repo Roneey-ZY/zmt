@@ -14,6 +14,10 @@ from core.schemas import HEADER_FIELDS, ITEM_FIELDS
 from mapping_ui import mapping_panel
 
 st.set_page_config(page_title="贸审通 TradeCheck Agent", page_icon="📋", layout="wide")
+from auth import require_login
+
+require_login()
+
 st.markdown("""
 <style>
 .stMainBlockContainer {max-width: 1150px; padding-top: 2rem;}
